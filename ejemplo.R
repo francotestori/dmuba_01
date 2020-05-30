@@ -1,10 +1,13 @@
 library(mongolite)
 library(ggplot2)
 
+url_path <- "mongodb+srv://daro:3xt3rm1nad0r@ds-uba-emjbf.mongodb.net/admin"
+
 # Ejemplo Tweets
-tweets <- mongo(
-  collection = "tweets_mongo_covid19", 
-  db = "DMUBA"
+tweets <- mongo(collection = "tweets_mongo_covid19", 
+  db = "DMUBA",
+  url = url_path,
+  verbose = TRUE
 )
 
 df_source = tweets$aggregate(
@@ -37,7 +40,9 @@ ggplot(
 # Ejemplo usuarios
 users <- mongo(
   collection = "users_mongo_covid19", 
-  db = "DMUBA"
+  db = "DMUBA",
+  url = url_path,
+  verbose = TRUE
 ) 
 
 df_users = users$find(
