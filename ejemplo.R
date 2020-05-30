@@ -7,6 +7,28 @@ tweets <- mongo(
   db = "DMUBA"
 )
 
+expanded_hashtags = tweets$aggregate(
+  pipeline =   '[{ "$unwind": { "path": "$hashtags", "preserveNullAndEmptyArrays": true } }]'
+)
+
+expanded_hashtags = tweets$aggregate(
+  '[
+    { "$unwind": { "path": "$hashtags", "preserveNullAndEmptyArrays": true } },
+    { $unwind: { path: "$symbols", preserveNullAndEmptyArrays: true } },
+    { "$project": {
+      "user_id": 1,
+      "status_id": 1,  
+      "hashtags": 1, 
+      "created_at": 1, 
+      "source": 1, 
+      "is_quote": 1, 
+      "is_retweet": 1
+      }
+    }
+   ]'
+)
+
+
 df_source = tweets$aggregate(
 '[
   {
