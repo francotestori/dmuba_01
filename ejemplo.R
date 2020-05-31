@@ -1,5 +1,10 @@
 library(mongolite)
 library(ggplot2)
+library(utils)
+
+#read the Dataset sheet into “R”. The dataset will be called "data".
+data <- read.csv("https://opendata.ecdc.europa.eu/covid19/casedistribution/csv", na.strings = "", fileEncoding = "UTF-8-BOM")
+
 
 url_path <- "mongodb+srv://daro:3xt3rm1nad0r@ds-uba-emjbf.mongodb.net/admin"
 
@@ -59,6 +64,11 @@ hist(df_users$friends_count, main="cantidad de amigos por usuarios")
 hist(
   log10(df_users$friends_count  + 1), 
   main="Log10 - cantidad de amigos por usuarios"
+)
+hist(df_users$friends_count, main="cantidad de amigos por usuarios")
+hist(
+  df_users$friends_count  + 1, 
+  main=" cantidad de amigos por usuarios"
 )
 
 boxplot(
