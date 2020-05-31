@@ -8,12 +8,168 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
 ```{r}
-plot(cars)
+library(mongolite)
+library(ggplot2)
+
+tweets_mongo_covid19 <- mongo(
+  collection = "tweets_mongo_covid19", 
+  db = "DMUBA"
+)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+```{r}
+expanded_hashtags = tweets_mongo_covid19$aggregate(
+'[
+    {
+        "$unwind": "$hashtags"
+    },
+    {
+        "$project": {
+            "user_id": 1,
+            "screen_name": 1,
+            "verified": 1,
+            "location": 1,
+            "source": 1,
+            "created_at": {
+                "$dateToString": { "date": "$created_at"}
+            },
+            "favorite_count": 1,
+            "retweet_count": 1,
+            "statuses_count": 1,
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+            "retweet_user_id": 1,
+            "retweet_screen_name": 1,
+            "retweet_verified": 1,
+            "retweet_location":1,
+            "retweet_source": 1,
+            "retweet_created_at": {
+                "$cond": { 
+                    "if": { 
+                        "$eq" : ["$retweet_created_at", {}] 
+                    }, 
+                    "then": null, 
+                    "else": {
+                        "$dateToString": {"date": "$retweet_created_at"}
+                    }
+                }
+            },
+            "retweet_favorite_count": 1,
+            "retweet_retweet_count": 1,
+            "retweet_statuses_count": 1,
+            
+            "quoted_user_id": 1,
+            "quoted_screen_name": 1,
+            "quoted_verified": 1,
+            "quoted_location": 1,
+            "quoted_source": 1, 
+             "quoted_created_at": {
+                "$cond": { 
+                    "if": { 
+                        "$eq" : ["$quoted_created_at", {}] 
+                    }, 
+                    "then": null, 
+                    "else": {
+                        "$dateToString": {"date": "$quoted_created_at"}
+                    }
+                }
+            },
+            "quoted_favorite_count": 1,
+            "quoted_retweet_count": 1,
+            "quoted_statuses_count": 1,
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+            "hashtags": 1
+        }
+    }
+]'
+)
+```
+
+
+```{r}
+original_tweet_headers <- c(
+  'user_id',
+  'screen_name',
+  'verified',
+  'location',
+  'source',
+  'created_at',
+  'favorite_count',
+  'retweet_count',
+  'statuses_count',
+  'hashtags'
+)
+original_tweet_hashtags = expanded_hashtags[,original_tweet_headers]
+```
+
+```{r}
+retweeted_tweet_headers <- c(
+  'retweet_user_id',
+  'retweet_screen_name',
+  'retweet_verified',
+  'retweet_location',
+  'retweet_source',
+  'retweet_created_at',
+  'retweet_favorite_count',
+  'retweet_retweet_count',
+  'retweet_statuses_count',
+  'hashtags'
+)
+
+retweeted_tweet_hashtags = expanded_hashtags[,retweeted_tweet_headers]
+
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_user_id'] <- 'user_id'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_screen_name'] <- 'screen_name'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_verified'] <- 'verified'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_location'] <- 'location'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_source'] <- 'source'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_created_at'] <- 'created_at'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_favorite_count'] <- 'favorite_count'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_retweet_count'] <- 'retweet_count'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_statuses_count'] <- 'statuses_count'
+```
+
+
+```{r}
+quoted_tweet_headers <- c(
+  'quoted_user_id',
+  'quoted_screen_name',
+  'quoted_verified',
+  'quoted_location',
+  'quoted_source',
+  'quoted_created_at',
+  'quoted_favorite_count',
+  'quoted_retweet_count',
+  'quoted_statuses_count',
+  'hashtags'
+)
+quoted_tweet_hashtags = expanded_hashtags[,quoted_tweet_headers]
+
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_user_id'] <- 'user_id'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_screen_name'] <- 'screen_name'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_verified'] <- 'verified'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_location'] <- 'location'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_source'] <- 'source'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_created_at'] <- 'created_at'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_favorite_count'] <- 'favorite_count'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_retweet_count'] <- 'retweet_count'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_statuses_count'] <- 'statuses_count'
+
+```
+
+```{r}
+combined_hashtags = rbind(original_tweet_hashtags, retweeted_tweet_hashtags, quoted_tweet_hashtags)
+combined_hashtags = combined_hashtags[!is.na(combined_hashtags["hashtags"]),]
+
+summary(combined_hashtags)
+
+unique_hashtags = unique(combined_hashtags["hashtags"])
+unique_users = unique(combined_hashtags["screen_name"])
+sources = unique(combined_hashtags["source"])
+```
+
+
+```{r}
+hashtag_count = sort(table(combined_hashtags["hashtags"]), decreasing = TRUE)
+
+```
 
