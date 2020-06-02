@@ -10,6 +10,7 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 ```{r}
 library(mongolite)
 library(ggplot2)
+library(dplyr)
 
 tweets_mongo_covid19 <- mongo(
   collection = "tweets_mongo_covid19", 
@@ -159,7 +160,9 @@ names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_statuses_co
 ```{r}
 combined_hashtags = rbind(original_tweet_hashtags, retweeted_tweet_hashtags, quoted_tweet_hashtags)
 combined_hashtags = combined_hashtags[!is.na(combined_hashtags["hashtags"]),]
-
+combined_hashtags['created_at_R_date'] = as.POSIXct(combined_hashtags$created_at, format="%Y-%m-%dT", tz="UTC")
+combined_hashtags['created_at'] = as.POSIXct(combined_hashtags$created_at, format="%Y-%m-%dT%H:%M:%S", tz="UTC")
+  
 summary(combined_hashtags)
 
 unique_hashtags = unique(combined_hashtags["hashtags"])
@@ -169,7 +172,82 @@ sources = unique(combined_hashtags["source"])
 
 
 ```{r}
-hashtag_count = sort(table(combined_hashtags["hashtags"]), decreasing = TRUE)
+hashtag_count = as.data.frame(
+  table(combined_hashtags["hashtags"])
+)
 
+names(hashtag_count)[1]="hashtags"
+names(hashtag_count)[2]="count"
+
+
+hashtag_count["log10"] = log10(hashtag_count["count"] + 1)
+
+hist(hashtag_count$count, main="cantidad de tweets por hashtag")
+hist(hashtag_count$log10, main="Log10: cantidad de tweets por hashtag")
+
+
+summary(hashtag_count)
+```
+
+
+
+```{r}
+hashtags_with_screen_name = combined_hashtags[!is.na(combined_hashtags["screen_name"]),]
+
+hashtags_by_screen_name = hashtags_with_screen_name %>%
+  group_by(screen_name, hashtags) %>%
+  tally()
+
+names(hashtags_by_screen_name)[names(hashtags_by_screen_name) == "n"] = "count"
+
+hashtags_by_screen_name = hashtags_by_screen_name[
+  order(
+    hashtags_by_screen_name["count"], 
+    decreasing = TRUE
+  ),
+]
+
+View(hashtags_by_screen_name)
+```
+
+```{r}
+hashtags_with_screen_name_verified = combined_hashtags[
+  combined_hashtags["verified"] == "TRUE" & !is.na(combined_hashtags["screen_name"]),
+]
+
+hashtags_by_verified = hashtags_with_screen_name_verified %>%
+  group_by(screen_name, hashtags) %>%
+  tally()
+
+names(hashtags_by_verified)[names(hashtags_by_verified) == "n"] = "count"
+
+hashtags_by_verified = hashtags_by_verified[
+  order(
+    hashtags_by_verified["count"], 
+    decreasing = TRUE
+  ),
+]
+
+View(hashtags_by_verified)
+```
+
+
+```{r}
+hashtags_with_date = combined_hashtags[!is.na(combined_hashtags["created_at_R_date"]),]
+
+hashtags_by_date = hashtags_with_date %>%
+  group_by(created_at_R_date, hashtags) %>%
+  tally()
+
+names(hashtags_by_date)[names(hashtags_by_date) == "n"] = "count"
+
+hashtags_by_date = hashtags_by_date[
+  order(
+    hashtags_by_date["count"], 
+    decreasing = TRUE
+  ),
+]
+
+View(hashtags_by_date)
 ```
 
