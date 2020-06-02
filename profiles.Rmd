@@ -132,5 +132,64 @@ Combinamos y aplicamos transformaciones
 ```{r}
 combined_profiles = rbind(original_profiles, retweeted_profiles, quoted_profiles)
 
-tweet_profiles_df = combined_profiles[!duplicated(combined_profiles),]
+# Si buscamos duplicados en todas las columnas hay variaciones de followers entre usuarios
+#tweet_profiles_df = combined_profiles[!duplicated(combined_profiles),]
+
+tweet_profiles_df = combined_profiles[!duplicated(combined_profiles[,"user_id"]),]
+
+summary(tweet_profiles_df)
 ```
+
+Transformaciónes del dataframe de profiles
+```{r}
+View(tweet_profiles_df)
+
+```
+
+
+Sources Analysis
+```{r}
+sources = as.data.frame(
+  table(
+    tweet_profiles_df[
+      !is.na(tweet_profiles_df[,"source"]),
+      "source"]
+    )
+)
+
+names(sources)[1] = "source"
+names(sources)[2] = "count"
+
+sources = sources[
+  order(
+    sources["count"], 
+    decreasing = TRUE
+  ),
+]
+
+View(sources)
+```
+
+Location Analysis
+```{r}
+locations = as.data.frame(
+  table(
+    tweet_profiles_df[
+      !is.na(tweet_profiles_df[,"location"]),
+      "location"]
+    )
+)
+
+names(locations)[1] = "location"
+names(locations)[2] = "count"
+
+locations = locations[
+  order(
+    locations["count"], 
+    decreasing = TRUE
+  ),
+]
+
+View(locations)
+```
+
