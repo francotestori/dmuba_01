@@ -3,13 +3,11 @@ title: "DMUBA TP01"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
-
+Carga inicial del dataframe de tweets COVID-19
 ```{r}
 library(mongolite)
 library(ggplot2)
+library(dplyr)
 
 tweets_mongo_covid19 <- mongo(
   collection = "tweets_mongo_covid19", 
@@ -17,6 +15,8 @@ tweets_mongo_covid19 <- mongo(
 )
 ```
 
+# Análisis de Hashtags
+Desplegamos todos los hashtags
 ```{r}
 expanded_hashtags = tweets_mongo_covid19$aggregate(
 '[
@@ -84,7 +84,7 @@ expanded_hashtags = tweets_mongo_covid19$aggregate(
 )
 ```
 
-
+Combinamos los hashtags de los tweets originales, retweets y quotes involucrados
 ```{r}
 original_tweet_headers <- c(
   'user_id',
@@ -128,7 +128,6 @@ names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_retw
 names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_statuses_count'] <- 'statuses_count'
 ```
 
-
 ```{r}
 quoted_tweet_headers <- c(
   'quoted_user_id',
@@ -156,10 +155,16 @@ names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_statuses_co
 
 ```
 
+Combinamos y aplicamos transformaciones
 ```{r}
 combined_hashtags = rbind(original_tweet_hashtags, retweeted_tweet_hashtags, quoted_tweet_hashtags)
 combined_hashtags = combined_hashtags[!is.na(combined_hashtags["hashtags"]),]
+combined_hashtags['created_at_R_date'] = as.POSIXct(combined_hashtags$created_at, format="%Y-%m-%dT", tz="UTC")
+combined_hashtags['created_at'] = as.POSIXct(combined_hashtags$created_at, format="%Y-%m-%dT%H:%M:%S", tz="UTC")
+```
 
+Exploramos nuestros hashtags
+```{r}
 summary(combined_hashtags)
 
 unique_hashtags = unique(combined_hashtags["hashtags"])
@@ -167,9 +172,84 @@ unique_users = unique(combined_hashtags["screen_name"])
 sources = unique(combined_hashtags["source"])
 ```
 
-
+Hashtags y numero de ocurrencias
 ```{r}
-hashtag_count = sort(table(combined_hashtags["hashtags"]), decreasing = TRUE)
+hashtag_count = as.data.frame(
+  table(combined_hashtags["hashtags"])
+)
 
+names(hashtag_count)[1]="hashtags"
+names(hashtag_count)[2]="count"
+
+
+hashtag_count["log10"] = log10(hashtag_count["count"] + 1)
+
+hist(hashtag_count$count, main="cantidad de tweets por hashtag")
+hist(hashtag_count$log10, main="Log10: cantidad de tweets por hashtag")
+
+
+summary(hashtag_count)
+```
+
+Hastags y numero de ocurrencias por usuarios
+```{r}
+hashtags_with_screen_name = combined_hashtags[!is.na(combined_hashtags["screen_name"]),]
+
+hashtags_by_screen_name = hashtags_with_screen_name %>%
+  group_by(screen_name, hashtags) %>%
+  tally()
+
+names(hashtags_by_screen_name)[names(hashtags_by_screen_name) == "n"] = "count"
+
+hashtags_by_screen_name = hashtags_by_screen_name[
+  order(
+    hashtags_by_screen_name["count"], 
+    decreasing = TRUE
+  ),
+]
+
+View(hashtags_by_screen_name)
+```
+
+Hastags y numero de ocurrencias por usuarios verificados
+```{r}
+hashtags_with_screen_name_verified = combined_hashtags[
+  combined_hashtags["verified"] == "TRUE" & !is.na(combined_hashtags["screen_name"]),
+]
+
+hashtags_by_verified = hashtags_with_screen_name_verified %>%
+  group_by(screen_name, hashtags) %>%
+  tally()
+
+names(hashtags_by_verified)[names(hashtags_by_verified) == "n"] = "count"
+
+hashtags_by_verified = hashtags_by_verified[
+  order(
+    hashtags_by_verified["count"], 
+    decreasing = TRUE
+  ),
+]
+
+View(hashtags_by_verified)
+```
+
+Hastags y numero de ocurrencias por fecha (YYYY-mm-dd)
+```{r}
+hashtags_with_date = combined_hashtags[!is.na(combined_hashtags["created_at_R_date"]),]
+
+hashtags_by_date = hashtags_with_date %>%
+  group_by(created_at_R_date, hashtags) %>%
+  tally()
+
+names(hashtags_by_date)[names(hashtags_by_date) == "n"] = "count"
+
+hashtags_by_date = hashtags_by_date[
+  order(
+    hashtags_by_date["count"], 
+    decreasing = TRUE
+  ),
+]
+
+View(hashtags_by_date)
 ```
 
