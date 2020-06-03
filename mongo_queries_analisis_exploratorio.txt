@@ -1,0 +1,81 @@
+//Todos los RT, ordenados de acuerdo a mayor número de RT
+db.original_content_retweets.aggregate(
+  [
+    {$project: {"retweet_created_at" :1,
+    "retweet_status_id" :1,
+    "retweet_text" :1,
+    "retweet_source" :1,
+    "retweet_favorite_count" :1,
+    "retweet_retweet_count" :1,
+    "retweet_user_id" :1,
+    "retweet_screen_name" :1,
+    "retweet_name" :1,
+    "retweet_followers_count" :1,
+    "retweet_friends_count" :1,
+    "retweet_statuses_count" :1,
+    "retweet_location" :1,
+    "retweet_description" :1,
+    "retweet_verified" :1
+}},
+    {$sort:{"retweet_retweet_count":-1}},
+    {$group: { _id: "$retweet_status_id", 
+                retweet_created_at: {$first: "$retweet_created_at"},
+                retweet_status_id: {$first: "$retweet_status_id"},
+                retweet_text: {$first: "$retweet_text"},
+                retweet_source: {$first: "$retweet_source"},
+                retweet_favorite_count: {$first: "$retweet_favorite_count"},
+                retweet_retweet_count: {$first: "$retweet_retweet_count"},
+                retweet_user_id: {$first: "$retweet_user_id"},
+                retweet_screen_name: {$first: "$retweet_screen_name"},
+                retweet_name: {$first: "$retweet_name"},
+                retweet_followers_count: {$first: "$retweet_followers_count"},
+                retweet_friends_count: {$first: "$retweet_friends_count"},
+                retweet_statuses_count: {$first: "$retweet_statuses_count"},
+                retweet_location: {$first: "$retweet_location"},
+                retweet_description: {$first: "$retweet_description"},
+                retweet_verified: {$first: "$retweet_verified"},
+}},{$sort:{"retweet_retweet_count":-1}},    
+    {$out: "retweets_con_mas_rt"}
+  ]
+)
+
+//Usuarios cuyos TW tuvieron mayor número de RT
+db.original_content_retweets.aggregate(
+  [
+    {$project: {"retweet_created_at" :1,
+    "retweet_status_id" :1,
+    "retweet_text" :1,
+    "retweet_source" :1,
+    "retweet_favorite_count" :1,
+    "retweet_retweet_count" :1,
+    "retweet_user_id" :1,
+    "retweet_screen_name" :1,
+    "retweet_name" :1,
+    "retweet_followers_count" :1,
+    "retweet_friends_count" :1,
+    "retweet_statuses_count" :1,
+    "retweet_location" :1,
+    "retweet_description" :1,
+    "retweet_verified" :1
+}},
+    {$sort:{"retweet_retweet_count":-1}},
+    {$group: { _id: "$retweet_user_id", 
+                retweet_created_at: {$first: "$retweet_created_at"},
+                retweet_status_id: {$first: "$retweet_status_id"},
+                retweet_text: {$first: "$retweet_text"},
+                retweet_source: {$first: "$retweet_source"},
+                retweet_favorite_count: {$first: "$retweet_favorite_count"},
+                retweet_retweet_count: {$first: "$retweet_retweet_count"},
+                retweet_user_id: {$first: "$retweet_user_id"},
+                retweet_screen_name: {$first: "$retweet_screen_name"},
+                retweet_name: {$first: "$retweet_name"},
+                retweet_followers_count: {$first: "$retweet_followers_count"},
+                retweet_friends_count: {$first: "$retweet_friends_count"},
+                retweet_statuses_count: {$first: "$retweet_statuses_count"},
+                retweet_location: {$first: "$retweet_location"},
+                retweet_description: {$first: "$retweet_description"},
+                retweet_verified: {$first: "$retweet_verified"},
+}},{$sort:{"retweet_retweet_count":-1}},    
+    {$out: "borrar5"}
+  ]
+)
