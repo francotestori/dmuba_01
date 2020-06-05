@@ -1766,7 +1766,8 @@ tweets_mongo_covid19 &lt;- mongo(
 <!-- rnb-text-begin -->
 <div id="análisis-de-perfiles" class="section level1">
 <h1>Análisis de Perfiles</h1>
-<p>Desplegamos todos los perfiles</p>
+<div id="desplegamos-todos-los-perfiles" class="section level2">
+<h2>Desplegamos todos los perfiles</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJvZmlsZXMgPSB0d2VldHNfbW9uZ29fY292aWQxOSRmaW5kKGZpZWxkcz1cbid7XG4gICAgICBcInVzZXJfaWRcIjogMSxcbiAgICAgIFwic2NyZWVuX25hbWVcIjogMSxcbiAgICAgIFwidmVyaWZpZWRcIjogMSxcbiAgICAgIFwibG9jYXRpb25cIjogMSxcbiAgICAgIFwic291cmNlXCI6IDEsXG4gICAgICBcImZhdm9yaXRlX2NvdW50XCI6IDEsXG4gICAgICBcInJldHdlZXRfY291bnRcIjogMSxcbiAgICAgIFwic3RhdHVzZXNfY291bnRcIjogMSxcbiAgICAgIFwiZm9sbG93ZXJzX2NvdW50XCI6IDEsXG4gICAgICBcImZyaWVuZHNfY291bnRcIjogMSxcbiAgICAgICAgXG4gICAgICBcInJldHdlZXRfdXNlcl9pZFwiOiAxLFxuICAgICAgXCJyZXR3ZWV0X3NjcmVlbl9uYW1lXCI6IDEsXG4gICAgICBcInJldHdlZXRfdmVyaWZpZWRcIjogMSxcbiAgICAgIFwicmV0d2VldF9sb2NhdGlvblwiOiAxLFxuICAgICAgXCJyZXR3ZWV0X3NvdXJjZVwiOiAxLFxuICAgICAgXCJyZXR3ZWV0X2Zhdm9yaXRlX2NvdW50XCI6IDEsXG4gICAgICBcInJldHdlZXRfcmV0d2VldF9jb3VudFwiOiAxLFxuICAgICAgXCJyZXR3ZWV0X3N0YXR1c2VzX2NvdW50XCI6IDEsXG4gICAgICBcInJldHdlZXRfZm9sbG93ZXJzX2NvdW50XCI6IDEsXG4gICAgICBcInJldHdlZXRfZnJpZW5kc19jb3VudFwiOiAxLFxuICAgICAgXG4gICAgICBcInF1b3RlZF91c2VyX2lkXCI6IDEsXG4gICAgICBcInF1b3RlZF9zY3JlZW5fbmFtZVwiOiAxLFxuICAgICAgXCJxdW90ZWRfdmVyaWZpZWRcIjogMSxcbiAgICAgIFwicXVvdGVkX2xvY2F0aW9uXCI6IDEsXG4gICAgICBcInF1b3RlZF9zb3VyY2VcIjogMSxcbiAgICAgIFwicXVvdGVkX2Zhdm9yaXRlX2NvdW50XCI6IDEsXG4gICAgICBcInF1b3RlZF9yZXR3ZWV0X2NvdW50XCI6IDEsXG4gICAgICBcInF1b3RlZF9zdGF0dXNlc19jb3VudFwiOiAxLFxuICAgICAgXCJxdW90ZWRfZm9sbG93ZXJzX2NvdW50XCI6IDEsXG4gICAgICBcInF1b3RlZF9mcmllbmRzX2NvdW50XCI6IDFcbn0nXG4pXG5gYGAifQ== -->
@@ -1809,7 +1810,9 @@ tweets_mongo_covid19 &lt;- mongo(
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Combinamos los perfiles de los tweets originales, retweets y quotes involucrados</p>
+</div>
+<div id="combinamos-los-perfiles-de-los-tweets-originales-retweets-y-quotes-involucrados" class="section level2">
+<h2>Combinamos los perfiles de los tweets originales, retweets y quotes involucrados</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub3JpZ2luYWxfcHJvZmlsZXNfaGVhZGVyIDwtIGMoXG4gICd1c2VyX2lkJyxcbiAgJ3NjcmVlbl9uYW1lJyxcbiAgJ3ZlcmlmaWVkJyxcbiAgJ2xvY2F0aW9uJyxcbiAgJ3NvdXJjZScsXG4gICdmYXZvcml0ZV9jb3VudCcsXG4gICdyZXR3ZWV0X2NvdW50JyxcbiAgJ3N0YXR1c2VzX2NvdW50JyxcbiAgJ2ZvbGxvd2Vyc19jb3VudCcsXG4gICdmcmllbmRzX2NvdW50J1xuKVxub3JpZ2luYWxfcHJvZmlsZXMgPSBwcm9maWxlc1ssb3JpZ2luYWxfcHJvZmlsZXNfaGVhZGVyXVxuYGBgIn0= -->
@@ -1890,7 +1893,9 @@ names(quoted_profiles)[names(quoted_profiles) == 'quoted_friends_count'] &lt;- '
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Combinamos y aplicamos transformaciones</p>
+</div>
+<div id="combinamos-y-aplicamos-transformaciones" class="section level2">
+<h2>Combinamos y aplicamos transformaciones</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29tYmluZWRfcHJvZmlsZXMgPSByYmluZChvcmlnaW5hbF9wcm9maWxlcywgcmV0d2VldGVkX3Byb2ZpbGVzLCBxdW90ZWRfcHJvZmlsZXMpXG5cbnR3ZWV0X3Byb2ZpbGVzX2RmID0gY29tYmluZWRfcHJvZmlsZXNbIWR1cGxpY2F0ZWQoY29tYmluZWRfcHJvZmlsZXNbLFwidXNlcl9pZFwiXSksXVxuXG5zdW1tYXJ5KHR3ZWV0X3Byb2ZpbGVzX2RmKVxuYGBgIn0= -->
@@ -1920,16 +1925,14 @@ summary(tweet_profiles_df)</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Transformaciónes del dataframe de profiles</p>
+<p>Analisis de perfiles sobre plataforma</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVmlldyh0d2VldF9wcm9maWxlc19kZilcblxuYGBgIn0= -->
-<pre class="r"><code>View(tweet_profiles_df)
-</code></pre>
-<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Sources Analysis</p>
+</div>
+<div id="sources-analysis" class="section level2">
+<h2>Sources Analysis</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc291cmNlcyA9IGFzLmRhdGEuZnJhbWUoXG4gIHRhYmxlKFxuICAgIHR3ZWV0X3Byb2ZpbGVzX2RmW1xuICAgICAgIWlzLm5hKHR3ZWV0X3Byb2ZpbGVzX2RmWyxcInNvdXJjZVwiXSksXG4gICAgICBcInNvdXJjZVwiXVxuICAgIClcbilcblxubmFtZXMoc291cmNlcylbMV0gPSBcInNvdXJjZVwiXG5uYW1lcyhzb3VyY2VzKVsyXSA9IFwiY291bnRcIlxuXG5zb3VyY2VzID0gc291cmNlc1tcbiAgb3JkZXIoXG4gICAgc291cmNlc1tcImNvdW50XCJdLCBcbiAgICBkZWNyZWFzaW5nID0gVFJVRVxuICApLFxuXVxuXG5WaWV3KHNvdXJjZXMpXG5gYGAifQ== -->
@@ -1955,7 +1958,9 @@ View(sources)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Location Analysis</p>
+</div>
+<div id="location-analysis" class="section level2">
+<h2>Location Analysis</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG9jYXRpb25zID0gYXMuZGF0YS5mcmFtZShcbiAgdGFibGUoXG4gICAgdHdlZXRfcHJvZmlsZXNfZGZbXG4gICAgICAhaXMubmEodHdlZXRfcHJvZmlsZXNfZGZbLFwibG9jYXRpb25cIl0pLFxuICAgICAgXCJsb2NhdGlvblwiXVxuICAgIClcbilcblxubmFtZXMobG9jYXRpb25zKVsxXSA9IFwibG9jYXRpb25cIlxubmFtZXMobG9jYXRpb25zKVsyXSA9IFwiY291bnRcIlxuXG5sb2NhdGlvbnMgPSBsb2NhdGlvbnNbXG4gIG9yZGVyKFxuICAgIGxvY2F0aW9uc1tcImNvdW50XCJdLCBcbiAgICBkZWNyZWFzaW5nID0gVFJVRVxuICApLFxuXVxuXG5WaWV3KGxvY2F0aW9ucylcbmBgYCJ9 -->
@@ -1981,10 +1986,407 @@ View(locations)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+</div>
+<div id="usuarios-con-mayor-repercusión-retweet_count" class="section level1">
+<h1>3) Usuarios con mayor repercusión (retweet_count)</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudG9wX3VzZXJzX2J5X3JldHdlZXRfY291bnQ9Y29tYmluZWRfcHJvZmlsZXNcblxuI09yZGVuYW1vcyBwb3IgcmV0d2VldF9jb3VudCBkZSBtYW5lcmEgZGVjcmVjaWVudGUsIGhheSBtaXNtb3MgdHcgY29uIGRpc3RpbnRvIHJldHdlZXRfY291bnRcbnRvcF91c2Vyc19ieV9yZXR3ZWV0X2NvdW50PSB0b3BfdXNlcnNfYnlfcmV0d2VldF9jb3VudCAlPiVcbiAgZ3JvdXBfYnkodXNlcl9pZCkgJT4lXG4gIGFycmFuZ2UoLXJldHdlZXRfY291bnQpICU+JVxuICBmaWx0ZXIocm93X251bWJlcigpPT0xKVxuXG5WaWV3KFxuICBoZWFkKHRvcF91c2Vyc19ieV9yZXR3ZWV0X2NvdW50KVxuKVxuYGBgIn0= -->
+<pre class="r"><code>top_users_by_retweet_count=combined_profiles
+
+#Ordenamos por retweet_count de manera decreciente, hay mismos tw con distinto retweet_count
+top_users_by_retweet_count= top_users_by_retweet_count %&gt;%
+  group_by(user_id) %&gt;%
+  arrange(-retweet_count) %&gt;%
+  filter(row_number()==1)
+
+View(
+  head(top_users_by_retweet_count)
+)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Respecto a los replies, solo 38 casos de 1487 cuentan con 1 o más RT Respecto a los quotes, sólo contamos con el número de Quotes de aquellos que son TW, todos los registros se encuentran en 0.</p>
+<div id="tweets-de-mayor-impacto" class="section level2">
+<h2>Tweets de mayor impacto</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGZfdHdlZXRzID0gdHdlZXRzX21vbmdvX2NvdmlkMTkkZmluZChmaWVsZHM9XG4ne1xuICAgICAgXCJzdGF0dXNfaWRcIjogMSxcbiAgICAgIFwidXNlcl9pZFwiOiAxLFxuICAgICAgXCJzY3JlZW5fbmFtZVwiOiAxLFxuICAgICAgXCJ2ZXJpZmllZFwiOiAxLFxuICAgICAgXCJsb2NhdGlvblwiOiAxLFxuICAgICAgXCJzb3VyY2VcIjogMSxcbiAgICAgIFwiZmF2b3JpdGVfY291bnRcIjogMSxcbiAgICAgIFwicmV0d2VldF9jb3VudFwiOiAxLFxuICAgICAgXCJzdGF0dXNlc19jb3VudFwiOiAxLFxuICAgICAgXCJmb2xsb3dlcnNfY291bnRcIjogMSxcbiAgICAgIFwiZnJpZW5kc19jb3VudFwiOiAxLFxuICAgICAgICBcbiAgICAgIFwicmV0d2VldF9zdGF0dXNfaWRcIjogMSwgIFxuICAgICAgXCJyZXR3ZWV0X3VzZXJfaWRcIjogMSxcbiAgICAgIFwicmV0d2VldF9zY3JlZW5fbmFtZVwiOiAxLFxuICAgICAgXCJyZXR3ZWV0X3ZlcmlmaWVkXCI6IDEsXG4gICAgICBcInJldHdlZXRfbG9jYXRpb25cIjogMSxcbiAgICAgIFwicmV0d2VldF9zb3VyY2VcIjogMSxcbiAgICAgIFwicmV0d2VldF9mYXZvcml0ZV9jb3VudFwiOiAxLFxuICAgICAgXCJyZXR3ZWV0X3JldHdlZXRfY291bnRcIjogMSxcbiAgICAgIFwicmV0d2VldF9zdGF0dXNlc19jb3VudFwiOiAxLFxuICAgICAgXCJyZXR3ZWV0X2ZvbGxvd2Vyc19jb3VudFwiOiAxLFxuICAgICAgXCJyZXR3ZWV0X2ZyaWVuZHNfY291bnRcIjogMSxcbiAgICAgIFxuICAgICAgXCJxdW90ZWRfc3RhdHVzX2lkXCI6IDEsICBcbiAgICAgIFwicXVvdGVkX3VzZXJfaWRcIjogMSxcbiAgICAgIFwicXVvdGVkX3NjcmVlbl9uYW1lXCI6IDEsXG4gICAgICBcInF1b3RlZF92ZXJpZmllZFwiOiAxLFxuICAgICAgXCJxdW90ZWRfbG9jYXRpb25cIjogMSxcbiAgICAgIFwicXVvdGVkX3NvdXJjZVwiOiAxLFxuICAgICAgXCJxdW90ZWRfZmF2b3JpdGVfY291bnRcIjogMSxcbiAgICAgIFwicXVvdGVkX3JldHdlZXRfY291bnRcIjogMSxcbiAgICAgIFwicXVvdGVkX3N0YXR1c2VzX2NvdW50XCI6IDEsXG4gICAgICBcInF1b3RlZF9mb2xsb3dlcnNfY291bnRcIjogMSxcbiAgICAgIFwicXVvdGVkX2ZyaWVuZHNfY291bnRcIjogMVxufSdcbilcbmBgYCJ9 -->
+<pre class="r"><code>df_tweets = tweets_mongo_covid19$find(fields=
+'{
+      &quot;status_id&quot;: 1,
+      &quot;user_id&quot;: 1,
+      &quot;screen_name&quot;: 1,
+      &quot;verified&quot;: 1,
+      &quot;location&quot;: 1,
+      &quot;source&quot;: 1,
+      &quot;favorite_count&quot;: 1,
+      &quot;retweet_count&quot;: 1,
+      &quot;statuses_count&quot;: 1,
+      &quot;followers_count&quot;: 1,
+      &quot;friends_count&quot;: 1,
+        
+      &quot;retweet_status_id&quot;: 1,  
+      &quot;retweet_user_id&quot;: 1,
+      &quot;retweet_screen_name&quot;: 1,
+      &quot;retweet_verified&quot;: 1,
+      &quot;retweet_location&quot;: 1,
+      &quot;retweet_source&quot;: 1,
+      &quot;retweet_favorite_count&quot;: 1,
+      &quot;retweet_retweet_count&quot;: 1,
+      &quot;retweet_statuses_count&quot;: 1,
+      &quot;retweet_followers_count&quot;: 1,
+      &quot;retweet_friends_count&quot;: 1,
+      
+      &quot;quoted_status_id&quot;: 1,  
+      &quot;quoted_user_id&quot;: 1,
+      &quot;quoted_screen_name&quot;: 1,
+      &quot;quoted_verified&quot;: 1,
+      &quot;quoted_location&quot;: 1,
+      &quot;quoted_source&quot;: 1,
+      &quot;quoted_favorite_count&quot;: 1,
+      &quot;quoted_retweet_count&quot;: 1,
+      &quot;quoted_statuses_count&quot;: 1,
+      &quot;quoted_followers_count&quot;: 1,
+      &quot;quoted_friends_count&quot;: 1
+}'
+)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVmlldyhkZl90d2VldHMpXG5gYGAifQ== -->
+<pre class="r"><code>View(df_tweets)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="combinamos-tweets" class="section level1">
+<h1>Combinamos Tweets</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxub3JpZ2luYWxfdHdlZXRzX2hlYWRlciA8LSBjKFxuICAnc3RhdHVzX2lkJyxcbiAgJ3VzZXJfaWQnLFxuICAnc2NyZWVuX25hbWUnLFxuICAndmVyaWZpZWQnLFxuICAnbG9jYXRpb24nLFxuICAnc291cmNlJyxcbiAgJ2Zhdm9yaXRlX2NvdW50JyxcbiAgJ3JldHdlZXRfY291bnQnLFxuICAnc3RhdHVzZXNfY291bnQnLFxuICAnZm9sbG93ZXJzX2NvdW50JyxcbiAgJ2ZyaWVuZHNfY291bnQnXG4pXG5vcmlnaW5hbF90d2VldHMgPSBkZl90d2VldHNbLG9yaWdpbmFsX3R3ZWV0c19oZWFkZXJdXG5cbmBgYCJ9 -->
+<pre class="r"><code>original_tweets_header &lt;- c(
+  'status_id',
+  'user_id',
+  'screen_name',
+  'verified',
+  'location',
+  'source',
+  'favorite_count',
+  'retweet_count',
+  'statuses_count',
+  'followers_count',
+  'friends_count'
+)
+original_tweets = df_tweets[,original_tweets_header]
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmV0d2VldGVkX3R3ZWV0c19oZWFkZXIgPC0gYyhcbiAgJ3JldHdlZXRfc3RhdHVzX2lkJyxcbiAgJ3JldHdlZXRfdXNlcl9pZCcsXG4gICdyZXR3ZWV0X3NjcmVlbl9uYW1lJyxcbiAgJ3JldHdlZXRfdmVyaWZpZWQnLFxuICAncmV0d2VldF9sb2NhdGlvbicsXG4gICdyZXR3ZWV0X3NvdXJjZScsXG4gICdyZXR3ZWV0X2Zhdm9yaXRlX2NvdW50JyxcbiAgJ3JldHdlZXRfcmV0d2VldF9jb3VudCcsXG4gICdyZXR3ZWV0X3N0YXR1c2VzX2NvdW50JyxcbiAgJ3JldHdlZXRfZm9sbG93ZXJzX2NvdW50JyxcbiAgJ3JldHdlZXRfZnJpZW5kc19jb3VudCdcbilcblxucmV0d2VldGVkX3R3ZWV0cyA9IGRmX3R3ZWV0c1sscmV0d2VldGVkX3R3ZWV0c19oZWFkZXJdXG5cbm5hbWVzKHJldHdlZXRlZF90d2VldHMpW25hbWVzKHJldHdlZXRlZF90d2VldHMpID09ICdyZXR3ZWV0X3N0YXR1c19pZCddIDwtICdzdGF0dXNfaWQnXG5uYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKVtuYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKSA9PSAncmV0d2VldF91c2VyX2lkJ10gPC0gJ3VzZXJfaWQnXG5uYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKVtuYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKSA9PSAncmV0d2VldF9zY3JlZW5fbmFtZSddIDwtICdzY3JlZW5fbmFtZSdcbm5hbWVzKHJldHdlZXRlZF90d2VldHMpW25hbWVzKHJldHdlZXRlZF90d2VldHMpID09ICdyZXR3ZWV0X3ZlcmlmaWVkJ10gPC0gJ3ZlcmlmaWVkJ1xubmFtZXMocmV0d2VldGVkX3R3ZWV0cylbbmFtZXMocmV0d2VldGVkX3R3ZWV0cykgPT0gJ3JldHdlZXRfbG9jYXRpb24nXSA8LSAnbG9jYXRpb24nXG5uYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKVtuYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKSA9PSAncmV0d2VldF9zb3VyY2UnXSA8LSAnc291cmNlJ1xubmFtZXMocmV0d2VldGVkX3R3ZWV0cylbbmFtZXMocmV0d2VldGVkX3R3ZWV0cykgPT0gJ3JldHdlZXRfZmF2b3JpdGVfY291bnQnXSA8LSAnZmF2b3JpdGVfY291bnQnXG5uYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKVtuYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKSA9PSAncmV0d2VldF9yZXR3ZWV0X2NvdW50J10gPC0gJ3JldHdlZXRfY291bnQnXG5uYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKVtuYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKSA9PSAncmV0d2VldF9zdGF0dXNlc19jb3VudCddIDwtICdzdGF0dXNlc19jb3VudCdcbm5hbWVzKHJldHdlZXRlZF90d2VldHMpW25hbWVzKHJldHdlZXRlZF90d2VldHMpID09ICdyZXR3ZWV0X2ZvbGxvd2Vyc19jb3VudCddIDwtICdmb2xsb3dlcnNfY291bnQnXG5uYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKVtuYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKSA9PSAncmV0d2VldF9mcmllbmRzX2NvdW50J10gPC0gJ2ZyaWVuZHNfY291bnQnXG5cbmBgYCJ9 -->
+<pre class="r"><code>retweeted_tweets_header &lt;- c(
+  'retweet_status_id',
+  'retweet_user_id',
+  'retweet_screen_name',
+  'retweet_verified',
+  'retweet_location',
+  'retweet_source',
+  'retweet_favorite_count',
+  'retweet_retweet_count',
+  'retweet_statuses_count',
+  'retweet_followers_count',
+  'retweet_friends_count'
+)
+
+retweeted_tweets = df_tweets[,retweeted_tweets_header]
+
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_status_id'] &lt;- 'status_id'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_user_id'] &lt;- 'user_id'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_screen_name'] &lt;- 'screen_name'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_verified'] &lt;- 'verified'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_location'] &lt;- 'location'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_source'] &lt;- 'source'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_favorite_count'] &lt;- 'favorite_count'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_retweet_count'] &lt;- 'retweet_count'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_statuses_count'] &lt;- 'statuses_count'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_followers_count'] &lt;- 'followers_count'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_friends_count'] &lt;- 'friends_count'
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucXVvdGVkX3R3ZWV0c19oZWFkZXIgPC0gYyhcbiAgJ3F1b3RlZF9zdGF0dXNfaWQnLFxuICAncXVvdGVkX3VzZXJfaWQnLFxuICAncXVvdGVkX3NjcmVlbl9uYW1lJyxcbiAgJ3F1b3RlZF92ZXJpZmllZCcsXG4gICdxdW90ZWRfbG9jYXRpb24nLFxuICAncXVvdGVkX3NvdXJjZScsXG4gICdxdW90ZWRfZmF2b3JpdGVfY291bnQnLFxuICAncXVvdGVkX3JldHdlZXRfY291bnQnLFxuICAncXVvdGVkX3N0YXR1c2VzX2NvdW50JyxcbiAgJ3F1b3RlZF9mb2xsb3dlcnNfY291bnQnLFxuICAncXVvdGVkX2ZyaWVuZHNfY291bnQnXG4pXG5cbnF1b3RlZF90d2VldHMgPSBkZl90d2VldHNbLHF1b3RlZF90d2VldHNfaGVhZGVyXVxuXG5uYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX3N0YXR1c19pZCddIDwtICdzdGF0dXNfaWQnXG5uYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX3VzZXJfaWQnXSA8LSAndXNlcl9pZCdcbm5hbWVzKHF1b3RlZF90d2VldHMpW25hbWVzKHF1b3RlZF90d2VldHMpID09ICdxdW90ZWRfc2NyZWVuX25hbWUnXSA8LSAnc2NyZWVuX25hbWUnXG5uYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX3ZlcmlmaWVkJ10gPC0gJ3ZlcmlmaWVkJ1xubmFtZXMocXVvdGVkX3R3ZWV0cylbbmFtZXMocXVvdGVkX3R3ZWV0cykgPT0gJ3F1b3RlZF9sb2NhdGlvbiddIDwtICdsb2NhdGlvbidcbm5hbWVzKHF1b3RlZF90d2VldHMpW25hbWVzKHF1b3RlZF90d2VldHMpID09ICdxdW90ZWRfc291cmNlJ10gPC0gJ3NvdXJjZSdcbm5hbWVzKHF1b3RlZF90d2VldHMpW25hbWVzKHF1b3RlZF90d2VldHMpID09ICdxdW90ZWRfZmF2b3JpdGVfY291bnQnXSA8LSAnZmF2b3JpdGVfY291bnQnXG5uYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX3JldHdlZXRfY291bnQnXSA8LSAncmV0d2VldF9jb3VudCdcbm5hbWVzKHF1b3RlZF90d2VldHMpW25hbWVzKHF1b3RlZF90d2VldHMpID09ICdxdW90ZWRfc3RhdHVzZXNfY291bnQnXSA8LSAnc3RhdHVzZXNfY291bnQnXG5uYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX2ZvbGxvd2Vyc19jb3VudCddIDwtICdmb2xsb3dlcnNfY291bnQnXG5uYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX2ZyaWVuZHNfY291bnQnXSA8LSAnZnJpZW5kc19jb3VudCdcblxuYGBgIn0= -->
+<pre class="r"><code>quoted_tweets_header &lt;- c(
+  'quoted_status_id',
+  'quoted_user_id',
+  'quoted_screen_name',
+  'quoted_verified',
+  'quoted_location',
+  'quoted_source',
+  'quoted_favorite_count',
+  'quoted_retweet_count',
+  'quoted_statuses_count',
+  'quoted_followers_count',
+  'quoted_friends_count'
+)
+
+quoted_tweets = df_tweets[,quoted_tweets_header]
+
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_status_id'] &lt;- 'status_id'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_user_id'] &lt;- 'user_id'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_screen_name'] &lt;- 'screen_name'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_verified'] &lt;- 'verified'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_location'] &lt;- 'location'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_source'] &lt;- 'source'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_favorite_count'] &lt;- 'favorite_count'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_retweet_count'] &lt;- 'retweet_count'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_statuses_count'] &lt;- 'statuses_count'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_followers_count'] &lt;- 'followers_count'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_friends_count'] &lt;- 'friends_count'
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#4)Tweets con mayor repercusión</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29tYmluZWRfdHdlZXRzID0gcmJpbmQob3JpZ2luYWxfdHdlZXRzLCByZXR3ZWV0ZWRfdHdlZXRzLCBxdW90ZWRfdHdlZXRzKVxuVmlldyhjb21iaW5lZF90d2VldHMpXG50b3BfdHdlZXRzX2J5X3JldHdlZXRfY291bnQ9Y29tYmluZWRfdHdlZXRzXG4jT3JkZW5hbW9zIHBvciByZXR3ZWV0X2NvdW50IGRlIG1hbmVyYSBkZWNyZWNpZW50ZSwgaGF5IG1pc21vcyB0dyBjb24gZGlzdGludG8gcmV0d2VldF9jb3VudFxudG9wX3R3ZWV0c19ieV9yZXR3ZWV0X2NvdW50PSBkYXRhLmZyYW1lKHRvcF90d2VldHNfYnlfcmV0d2VldF9jb3VudCAlPiVcbiAgZ3JvdXBfYnkoc3RhdHVzX2lkKSAlPiVcbiAgYXJyYW5nZSgtcmV0d2VldF9jb3VudCkgJT4lXG4gIGZpbHRlcihyb3dfbnVtYmVyKCk9PTEpKVxuVmlldyhoZWFkKHRvcF90d2VldHNfYnlfcmV0d2VldF9jb3VudCkpXG5cblxuYGBgIn0= -->
+<pre class="r"><code>combined_tweets = rbind(original_tweets, retweeted_tweets, quoted_tweets)
+View(combined_tweets)
+top_tweets_by_retweet_count=combined_tweets
+#Ordenamos por retweet_count de manera decreciente, hay mismos tw con distinto retweet_count
+top_tweets_by_retweet_count= data.frame(top_tweets_by_retweet_count %&gt;%
+  group_by(status_id) %&gt;%
+  arrange(-retweet_count) %&gt;%
+  filter(row_number()==1))
+View(head(top_tweets_by_retweet_count))
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Sources Analysis by tweets</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc291cmNlc19ieV90d2VldHMgPSBhcy5kYXRhLmZyYW1lKFxuICB0YWJsZShcbiAgICB0b3BfdHdlZXRzX2J5X3JldHdlZXRfY291bnRbKFxuICAgICAgIWlzLm5hKHRvcF90d2VldHNfYnlfcmV0d2VldF9jb3VudFssXCJzb3VyY2VcIl0pKSxcbiAgICAgIFwic291cmNlXCJdXG4gICAgKVxuKVxuXG5uYW1lcyhzb3VyY2VzX2J5X3R3ZWV0cylbMV0gPSBcInNvdXJjZVwiXG5uYW1lcyhzb3VyY2VzX2J5X3R3ZWV0cylbMl0gPSBcImNvdW50XCJcblxuc291cmNlc19ieV90d2VldHMgPSBzb3VyY2VzX2J5X3R3ZWV0c1tcbiAgb3JkZXIoXG4gICAgc291cmNlc19ieV90d2VldHNbXCJjb3VudFwiXSwgXG4gICAgZGVjcmVhc2luZyA9IFRSVUVcbiAgKSxcbl1cblxuVmlldyhzb3VyY2VzX2J5X3R3ZWV0cylcbmBgYCJ9 -->
+<pre class="r"><code>sources_by_tweets = as.data.frame(
+  table(
+    top_tweets_by_retweet_count[(
+      !is.na(top_tweets_by_retweet_count[,&quot;source&quot;])),
+      &quot;source&quot;]
+    )
+)
+
+names(sources_by_tweets)[1] = &quot;source&quot;
+names(sources_by_tweets)[2] = &quot;count&quot;
+
+sources_by_tweets = sources_by_tweets[
+  order(
+    sources_by_tweets[&quot;count&quot;], 
+    decreasing = TRUE
+  ),
+]
+
+View(sources_by_tweets)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#5)Correlación con los perfiles de mayor impacto #Creación df variables numéricas</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtZXJpY192YXJpYWJsZXM9ZGF0YS5mcmFtZShjYmluZChcbiAgdG9wX3VzZXJzX2J5X3JldHdlZXRfY291bnQkZmF2b3JpdGVfY291bnQsXG4gIHRvcF91c2Vyc19ieV9yZXR3ZWV0X2NvdW50JHJldHdlZXRfY291bnQsXG4gIHRvcF91c2Vyc19ieV9yZXR3ZWV0X2NvdW50JHN0YXR1c2VzX2NvdW50LFxuICB0b3BfdXNlcnNfYnlfcmV0d2VldF9jb3VudCRmb2xsb3dlcnNfY291bnQsXG4gIHRvcF91c2Vyc19ieV9yZXR3ZWV0X2NvdW50JGZyaWVuZHNfY291bnRcbikpXG5uYW1lcyhudW1lcmljX3ZhcmlhYmxlcyk8LWMoXCJmYXZvcml0ZV9jb3VudFwiLFxuICBcInJldHdlZXRfY291bnRcIixcbiAgXCJzdGF0dXNlc19jb3VudFwiLFxuICBcImZvbGxvd2Vyc19jb3VudFwiLFxuICBcImZyaWVuZHNfY291bnRcIilcblZpZXcobnVtZXJpY192YXJpYWJsZXMpXG5gYGAifQ== -->
+<pre class="r"><code>numeric_variables=data.frame(cbind(
+  top_users_by_retweet_count$favorite_count,
+  top_users_by_retweet_count$retweet_count,
+  top_users_by_retweet_count$statuses_count,
+  top_users_by_retweet_count$followers_count,
+  top_users_by_retweet_count$friends_count
+))
+names(numeric_variables)&lt;-c(&quot;favorite_count&quot;,
+  &quot;retweet_count&quot;,
+  &quot;statuses_count&quot;,
+  &quot;followers_count&quot;,
+  &quot;friends_count&quot;)
+View(numeric_variables)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Correlación variables numéricas</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29yKG5hLm9taXQobnVtZXJpY192YXJpYWJsZXMpKVxuYGBgIn0= -->
+<pre class="r"><code>cor(na.omit(numeric_variables))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Correlación variables numéricas (escala logarítmica)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29yKGxvZzEwKG5hLm9taXQobnVtZXJpY192YXJpYWJsZXMpKzEpKVxuYGBgIn0= -->
+<pre class="r"><code>cor(log10(na.omit(numeric_variables)+1))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Test de independencia verified #Tomamos como base para que un tweet sea popular, retweet_count &gt;=100</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTT1hcy50YWJsZShyYmluZChjKCw4OCksYygyNSwyNSkpKVxuZGltbmFtZXMoTSk9bGlzdChQb3B1bGFyPWMoXCJTSVwiLFwiTk9cIiksVmVyaWZpZWQ9YyhcIlNJXCIsXCJOT1wiKSlcbmBgYCJ9 -->
+<pre class="r"><code>M=as.table(rbind(c(,88),c(25,25)))
+dimnames(M)=list(Popular=c(&quot;SI&quot;,&quot;NO&quot;),Verified=c(&quot;SI&quot;,&quot;NO&quot;))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFibGUodG9wX3VzZXJzX2J5X3JldHdlZXRfY291bnQkdmVyaWZpZWQpXG50YWJsZSh0b3BfdXNlcnNfYnlfcmV0d2VldF9jb3VudCRyZXR3ZWV0X2NvdW50Pj0xKVxuTT10YWJsZSh0b3BfdXNlcnNfYnlfcmV0d2VldF9jb3VudCR2ZXJpZmllZCx0b3BfdXNlcnNfYnlfcmV0d2VldF9jb3VudCRyZXR3ZWV0X2NvdW50Pj0xKVxuZGltbmFtZXMoTSk9bGlzdChQb3B1bGFyPWMoXCJTSVwiLFwiTk9cIiksVmVyaWZpZWQ9YyhcIlNJXCIsXCJOT1wiKSlcblhzcT1jaGlzcS50ZXN0KE0pXG5Yc3FcbmBgYCJ9 -->
+<pre class="r"><code>table(top_users_by_retweet_count$verified)
+table(top_users_by_retweet_count$retweet_count&gt;=1)
+M=table(top_users_by_retweet_count$verified,top_users_by_retweet_count$retweet_count&gt;=1)
+dimnames(M)=list(Popular=c(&quot;SI&quot;,&quot;NO&quot;),Verified=c(&quot;SI&quot;,&quot;NO&quot;))
+Xsq=chisq.test(M)
+Xsq</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Gráfico de mosaicos</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubW9zYWljcGxvdCh0KE0pLCBjb2w9YyhcImxpZ2h0Z3JlZW5cIixcInBpbmtcIiksIG1haW49XCJWZXJpZmljYWRvIHZzIFR3ZWV0cyBQb3B1bGFyZXNcIilcbmBgYCJ9 -->
+<pre class="r"><code>mosaicplot(t(M), col=c(&quot;lightgreen&quot;,&quot;pink&quot;), main=&quot;Verificado vs Tweets Populares&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Como conclusión, no son independientes que tengan Retweets siendo cuentas verificadas.</p>
+<p>#9)Longitud de texto por plataforma #Armo df con source y longitud de texto, tomando is_quote:false y is_retweet:false</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzPWRhdGEuZnJhbWUodHdlZXRzX21vbmdvX2NvdmlkMTkkZmluZChxdWVyeSA9ICd7XCJpc19xdW90ZVwiIDogZmFsc2UsIFwiaXNfcmV0d2VldFwiIDogZmFsc2V9JywgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gIGZpZWxkcz1cbid7XG4gICAgICBcInNvdXJjZVwiOiAxLFxuICAgICAgXCJkaXNwbGF5X3RleHRfd2lkdGhcIjoxLFxuICAgICAgXCJ0ZXh0XCI6MVxuICAgICAgXG59J1xuKSlcblZpZXcoZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzKVxuYGBgIn0= -->
+<pre class="r"><code>df_source_text_widht_by_original_tweets=data.frame(tweets_mongo_covid19$find(query = '{&quot;is_quote&quot; : false, &quot;is_retweet&quot; : false}', 
+                            
+  fields=
+'{
+      &quot;source&quot;: 1,
+      &quot;display_text_width&quot;:1,
+      &quot;text&quot;:1
+      
+}'
+))
+View(df_source_text_widht_by_original_tweets)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Cuenta de negativos y totales</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc291cmNlc19vcmlnaW5hbCA9IGFzLmRhdGEuZnJhbWUoXG4gIHRhYmxlKFxuICAgIGRmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0c1tcbiAgICAgICFpcy5uYShkZl9zb3VyY2VfdGV4dF93aWRodF9ieV9vcmlnaW5hbF90d2VldHNbLFwiZGlzcGxheV90ZXh0X3dpZHRoXCJdKSxcbiAgICAgIFwic291cmNlXCJdXG4gICAgKSlcblxuVmlldyhzb3VyY2VzX29yaWdpbmFsKVxuYGBgIn0= -->
+<pre class="r"><code>sources_original = as.data.frame(
+  table(
+    df_source_text_widht_by_original_tweets[
+      !is.na(df_source_text_widht_by_original_tweets[,&quot;display_text_width&quot;]),
+      &quot;source&quot;]
+    ))
+
+View(sources_original)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Genero un atributo con tipo de plataforma</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzW2RmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0cyRzb3VyY2UgPT0gXCJUd2l0dGVyIGZvciBBbmRyb2lkXCIsIFwicGxhdGFmb3JtYVwiXSA9IFwiU21hcnRwaG9uZVwiXG5kZl9zb3VyY2VfdGV4dF93aWRodF9ieV9vcmlnaW5hbF90d2VldHNbZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzJHNvdXJjZSA9PSBcIlR3aXR0ZXIgZm9yIGlQaG9uZVwiLCBcInBsYXRhZm9ybWFcIl0gPSBcIlNtYXJ0cGhvbmVcIlxuZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzW2RmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0cyRzb3VyY2UgPT0gXCJUd2VldERlY2tcIiwgXCJwbGF0YWZvcm1hXCJdID0gXCJFc2NyaXRvcmlvXCJcbmRmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0cyRMb25naXR1ZD1uY2hhcihkZl9zb3VyY2VfdGV4dF93aWRodF9ieV9vcmlnaW5hbF90d2VldHMkdGV4dClcblZpZXcoZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzKVxuXG5gYGAifQ== -->
+<pre class="r"><code>df_source_text_widht_by_original_tweets[df_source_text_widht_by_original_tweets$source == &quot;Twitter for Android&quot;, &quot;plataforma&quot;] = &quot;Smartphone&quot;
+df_source_text_widht_by_original_tweets[df_source_text_widht_by_original_tweets$source == &quot;Twitter for iPhone&quot;, &quot;plataforma&quot;] = &quot;Smartphone&quot;
+df_source_text_widht_by_original_tweets[df_source_text_widht_by_original_tweets$source == &quot;TweetDeck&quot;, &quot;plataforma&quot;] = &quot;Escritorio&quot;
+df_source_text_widht_by_original_tweets$Longitud=nchar(df_source_text_widht_by_original_tweets$text)
+View(df_source_text_widht_by_original_tweets)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Mediana de longitud por tipo de fuente</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWdncmVnYXRlKGRpc3BsYXlfdGV4dF93aWR0aCB+IHNvdXJjZSwgZGF0YT1kZl9zb3VyY2VfdGV4dF93aWRodF9ieV9vcmlnaW5hbF90d2VldHMsIEZVTj1tZWRpYW4pXG5hZ2dyZWdhdGUoZGlzcGxheV90ZXh0X3dpZHRoIH4gcGxhdGFmb3JtYSwgZGF0YT1kZl9zb3VyY2VfdGV4dF93aWRodF9ieV9vcmlnaW5hbF90d2VldHMsIEZVTj1tZWRpYW4pXG5gYGAifQ== -->
+<pre class="r"><code>aggregate(display_text_width ~ source, data=df_source_text_widht_by_original_tweets, FUN=median)
+aggregate(display_text_width ~ plataforma, data=df_source_text_widht_by_original_tweets, FUN=median)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Boxplot por tipo de fuente</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYm94cGxvdChkZl9zb3VyY2VfdGV4dF93aWRodF9ieV9vcmlnaW5hbF90d2VldHNbZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzJHBsYXRhZm9ybWE9PVwiU21hcnRwaG9uZVwifCAgICAgICAgICAgICAgICAgICAgICAgICAgZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzJHBsYXRhZm9ybWE9PVwiRXNjcml0b3Jpb1wiLFwiZGlzcGxheV90ZXh0X3dpZHRoXCJdflxuICAgICAgICAgIGRmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0c1tkZl9zb3VyY2VfdGV4dF93aWRodF9ieV9vcmlnaW5hbF90d2VldHMkcGxhdGFmb3JtYT09XCJTbWFydHBob25lXCJ8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzJHBsYXRhZm9ybWE9PVwiRXNjcml0b3Jpb1wiLFwicGxhdGFmb3JtYVwiXSxtYWluPVwiTG9uZ2l0dWQgZGUgdGV4dG8tcGxhdGFmb3JtYVwiLHlsYWI9XCJMb25naXR1ZCBkZSB0ZXh0b1wiLCB4bGFiPVwiUGxhdGFmb3JtYVwiKVxuYGBgIn0= -->
+<pre class="r"><code>boxplot(df_source_text_widht_by_original_tweets[df_source_text_widht_by_original_tweets$plataforma==&quot;Smartphone&quot;|                          df_source_text_widht_by_original_tweets$plataforma==&quot;Escritorio&quot;,&quot;display_text_width&quot;]~
+          df_source_text_widht_by_original_tweets[df_source_text_widht_by_original_tweets$plataforma==&quot;Smartphone&quot;|                                 df_source_text_widht_by_original_tweets$plataforma==&quot;Escritorio&quot;,&quot;plataforma&quot;],main=&quot;Longitud de texto-plataforma&quot;,ylab=&quot;Longitud de texto&quot;, xlab=&quot;Plataforma&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Doble click sobre los tweets de escritorio</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXNjcml0b3Jpbz1kZl9zb3VyY2VfdGV4dF93aWRodF9ieV9vcmlnaW5hbF90d2VldHNbKGRmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0cyRwbGF0YWZvcm1hPT1cIkVzY3JpdG9yaW9cIiksXVxuZXNjcml0b3Jpb1soIWlzLm5hKGVzY3JpdG9yaW8kZGlzcGxheV90ZXh0X3dpZHRoKSksXVxuYGBgIn0= -->
+<pre class="r"><code>escritorio=df_source_text_widht_by_original_tweets[(df_source_text_widht_by_original_tweets$plataforma==&quot;Escritorio&quot;),]
+escritorio[(!is.na(escritorio$display_text_width)),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#6) Análisis de outliers</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaz0yMDBcbnBsb3QoaGVhZChsb2cxMCh0b3BfdXNlcnNfYnlfcmV0d2VldF9jb3VudCRyZXR3ZWV0X2NvdW50KzEpLGspLGhlYWQobG9nMTAodG9wX3VzZXJzX2J5X3JldHdlZXRfY291bnQkZmF2b3JpdGVfY291bnQrMSksaykpXG5gYGAifQ== -->
+<pre class="r"><code>k=200
+plot(head(log10(top_users_by_retweet_count$retweet_count+1),k),head(log10(top_users_by_retweet_count$favorite_count+1),k))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Local outlier factor</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShSbG9mKVxuaz0xMDBcbmRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnQ9ZGF0YS5mcmFtZShjYmluZChoZWFkKGxvZzEwKHRvcF91c2Vyc19ieV9yZXR3ZWV0X2NvdW50JHJldHdlZXRfY291bnQrMSksayksaGVhZChsb2cxMCh0b3BfdXNlcnNfYnlfcmV0d2VldF9jb3VudCRmYXZvcml0ZV9jb3VudCsxKSxrKSkpXG5uYW1lcyhkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50KT1jKFwicmV0d2VldF9jb3VudFwiLFwiZmF2b3JpdGVfY291bnRcIilcbiMgQ2FsY3VsYW1vcyBMT0YgcGFyYSBrPTMgdmVjaW5vcyBwb3IgaW5zdGFuY2lhXG5kZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50JHNjb3JlPC1sb2YoZGZfcmV0d2VldF9jb3VudF9mYXZvcml0ZV9jb3VudCwgaz0yKVxudW1icmFsPC0yXG5kZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50JG91dGxpZXIgPC0gKGRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnQkc2NvcmU+dW1icmFsKVxuZGZfcmV0d2VldF9jb3VudF9mYXZvcml0ZV9jb3VudCRjb2xvciA8LSBpZmVsc2UoZGZfcmV0d2VldF9jb3VudF9mYXZvcml0ZV9jb3VudCRvdXRsaWVyLCBcInJlZFwiLCBcImJsYWNrXCIpXG5WaWV3KGRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnQpXG5nZ3Bsb3QoZGZfcmV0d2VldF9jb3VudF9mYXZvcml0ZV9jb3VudCwgYWVzKHg9cmV0d2VldF9jb3VudCx5PWZhdm9yaXRlX2NvdW50LCBjb2xvcj1vdXRsaWVyKSkrZ2VvbV9wb2ludCgpXG5gYGAifQ== -->
+<pre class="r"><code>library(Rlof)
+k=100
+df_retweet_count_favorite_count=data.frame(cbind(head(log10(top_users_by_retweet_count$retweet_count+1),k),head(log10(top_users_by_retweet_count$favorite_count+1),k)))
+names(df_retweet_count_favorite_count)=c(&quot;retweet_count&quot;,&quot;favorite_count&quot;)
+# Calculamos LOF para k=3 vecinos por instancia
+df_retweet_count_favorite_count$score&lt;-lof(df_retweet_count_favorite_count, k=2)
+umbral&lt;-2
+df_retweet_count_favorite_count$outlier &lt;- (df_retweet_count_favorite_count$score&gt;umbral)
+df_retweet_count_favorite_count$color &lt;- ifelse(df_retweet_count_favorite_count$outlier, &quot;red&quot;, &quot;black&quot;)
+View(df_retweet_count_favorite_count)
+ggplot(df_retweet_count_favorite_count, aes(x=retweet_count,y=favorite_count, color=outlier))+geom_point()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>#Mahalanobis, vemos aquellos casos que se alejan de la linealidad, no necesariamente outliers unidimensionales.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGZfcmV0d2VldF9jb3VudF9mYXZvcml0ZV9jb3VudCRtYWhhbGFub2JpcyA8LSBtYWhhbGFub2JpcyhkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50WywxOjJdLCBjb2xNZWFucyhkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50WywxOjJdKSwgY292KGRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnRbLDE6Ml0pKVxuXG4jIE9yZGVuYW1vcyBkZSBmb3JtYSBkZWNyZWNpZW50ZSwgc2VnP24gZWwgc2NvcmUgZGUgTWFoYWxhbm9iaXNcbmRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnQgPC0gZGZfcmV0d2VldF9jb3VudF9mYXZvcml0ZV9jb3VudFtvcmRlcihkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50JG1haGFsYW5vYmlzLGRlY3JlYXNpbmcgPSBUUlVFKSxdXG5cbiMgRGVzY2FydGFtb3MgbG9zIG91dGxpZXJzIHNlZz9uIHVuIHVtYnJhbFxudW1icmFsPC01XG5kZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50JG91dGxpZXIyIDwtIChkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50JG1haGFsYW5vYmlzPnVtYnJhbClcblxuZ2dwbG90KGRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnQsIGFlcyh4PXJldHdlZXRfY291bnQseT1mYXZvcml0ZV9jb3VudCwgY29sb3I9b3V0bGllcjIpKStnZW9tX3BvaW50KClcblxuVmlldyhkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50KVxuYGBgIn0= -->
+<pre class="r"><code>df_retweet_count_favorite_count$mahalanobis &lt;- mahalanobis(df_retweet_count_favorite_count[,1:2], colMeans(df_retweet_count_favorite_count[,1:2]), cov(df_retweet_count_favorite_count[,1:2]))
+
+# Ordenamos de forma decreciente, seg?n el score de Mahalanobis
+df_retweet_count_favorite_count &lt;- df_retweet_count_favorite_count[order(df_retweet_count_favorite_count$mahalanobis,decreasing = TRUE),]
+
+# Descartamos los outliers seg?n un umbral
+umbral&lt;-5
+df_retweet_count_favorite_count$outlier2 &lt;- (df_retweet_count_favorite_count$mahalanobis&gt;umbral)
+
+ggplot(df_retweet_count_favorite_count, aes(x=retweet_count,y=favorite_count, color=outlier2))+geom_point()
+
+View(df_retweet_count_favorite_count)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRE1VQkEgVFAwMSIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKQ2FyZ2EgaW5pY2lhbCBkZWwgZGF0YWZyYW1lIGRlIHR3ZWV0cyBDT1ZJRC0xOQpgYGB7cn0KbGlicmFyeShtb25nb2xpdGUpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShkcGx5cikKCnR3ZWV0c19tb25nb19jb3ZpZDE5IDwtIG1vbmdvKAogIGNvbGxlY3Rpb24gPSAidHdlZXRzX21vbmdvX2NvdmlkMTkiLCAKICBkYiA9ICJETVVCQSIKKQpgYGAKCiMgQW7DoWxpc2lzIGRlIFBlcmZpbGVzCkRlc3BsZWdhbW9zIHRvZG9zIGxvcyBwZXJmaWxlcwpgYGB7cn0KcHJvZmlsZXMgPSB0d2VldHNfbW9uZ29fY292aWQxOSRmaW5kKGZpZWxkcz0KJ3sKICAgICAgInVzZXJfaWQiOiAxLAogICAgICAic2NyZWVuX25hbWUiOiAxLAogICAgICAidmVyaWZpZWQiOiAxLAogICAgICAibG9jYXRpb24iOiAxLAogICAgICAic291cmNlIjogMSwKICAgICAgImZhdm9yaXRlX2NvdW50IjogMSwKICAgICAgInJldHdlZXRfY291bnQiOiAxLAogICAgICAic3RhdHVzZXNfY291bnQiOiAxLAogICAgICAiZm9sbG93ZXJzX2NvdW50IjogMSwKICAgICAgImZyaWVuZHNfY291bnQiOiAxLAogICAgICAgIAogICAgICAicmV0d2VldF91c2VyX2lkIjogMSwKICAgICAgInJldHdlZXRfc2NyZWVuX25hbWUiOiAxLAogICAgICAicmV0d2VldF92ZXJpZmllZCI6IDEsCiAgICAgICJyZXR3ZWV0X2xvY2F0aW9uIjogMSwKICAgICAgInJldHdlZXRfc291cmNlIjogMSwKICAgICAgInJldHdlZXRfZmF2b3JpdGVfY291bnQiOiAxLAogICAgICAicmV0d2VldF9yZXR3ZWV0X2NvdW50IjogMSwKICAgICAgInJldHdlZXRfc3RhdHVzZXNfY291bnQiOiAxLAogICAgICAicmV0d2VldF9mb2xsb3dlcnNfY291bnQiOiAxLAogICAgICAicmV0d2VldF9mcmllbmRzX2NvdW50IjogMSwKICAgICAgCiAgICAgICJxdW90ZWRfdXNlcl9pZCI6IDEsCiAgICAgICJxdW90ZWRfc2NyZWVuX25hbWUiOiAxLAogICAgICAicXVvdGVkX3ZlcmlmaWVkIjogMSwKICAgICAgInF1b3RlZF9sb2NhdGlvbiI6IDEsCiAgICAgICJxdW90ZWRfc291cmNlIjogMSwKICAgICAgInF1b3RlZF9mYXZvcml0ZV9jb3VudCI6IDEsCiAgICAgICJxdW90ZWRfcmV0d2VldF9jb3VudCI6IDEsCiAgICAgICJxdW90ZWRfc3RhdHVzZXNfY291bnQiOiAxLAogICAgICAicXVvdGVkX2ZvbGxvd2Vyc19jb3VudCI6IDEsCiAgICAgICJxdW90ZWRfZnJpZW5kc19jb3VudCI6IDEKfScKKQpgYGAKCkNvbWJpbmFtb3MgbG9zIHBlcmZpbGVzIGRlIGxvcyB0d2VldHMgb3JpZ2luYWxlcywgcmV0d2VldHMgeSBxdW90ZXMgaW52b2x1Y3JhZG9zCmBgYHtyfQpvcmlnaW5hbF9wcm9maWxlc19oZWFkZXIgPC0gYygKICAndXNlcl9pZCcsCiAgJ3NjcmVlbl9uYW1lJywKICAndmVyaWZpZWQnLAogICdsb2NhdGlvbicsCiAgJ3NvdXJjZScsCiAgJ2Zhdm9yaXRlX2NvdW50JywKICAncmV0d2VldF9jb3VudCcsCiAgJ3N0YXR1c2VzX2NvdW50JywKICAnZm9sbG93ZXJzX2NvdW50JywKICAnZnJpZW5kc19jb3VudCcKKQpvcmlnaW5hbF9wcm9maWxlcyA9IHByb2ZpbGVzWyxvcmlnaW5hbF9wcm9maWxlc19oZWFkZXJdCmBgYAoKYGBge3J9CnJldHdlZXRlZF9wcm9maWxlc19oZWFkZXIgPC0gYygKICAncmV0d2VldF91c2VyX2lkJywKICAncmV0d2VldF9zY3JlZW5fbmFtZScsCiAgJ3JldHdlZXRfdmVyaWZpZWQnLAogICdyZXR3ZWV0X2xvY2F0aW9uJywKICAncmV0d2VldF9zb3VyY2UnLAogICdyZXR3ZWV0X2Zhdm9yaXRlX2NvdW50JywKICAncmV0d2VldF9yZXR3ZWV0X2NvdW50JywKICAncmV0d2VldF9zdGF0dXNlc19jb3VudCcsCiAgJ3JldHdlZXRfZm9sbG93ZXJzX2NvdW50JywKICAncmV0d2VldF9mcmllbmRzX2NvdW50JwopCgpyZXR3ZWV0ZWRfcHJvZmlsZXMgPSBwcm9maWxlc1sscmV0d2VldGVkX3Byb2ZpbGVzX2hlYWRlcl0KCm5hbWVzKHJldHdlZXRlZF9wcm9maWxlcylbbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKSA9PSAncmV0d2VldF91c2VyX2lkJ10gPC0gJ3VzZXJfaWQnCm5hbWVzKHJldHdlZXRlZF9wcm9maWxlcylbbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKSA9PSAncmV0d2VldF9zY3JlZW5fbmFtZSddIDwtICdzY3JlZW5fbmFtZScKbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKVtuYW1lcyhyZXR3ZWV0ZWRfcHJvZmlsZXMpID09ICdyZXR3ZWV0X3ZlcmlmaWVkJ10gPC0gJ3ZlcmlmaWVkJwpuYW1lcyhyZXR3ZWV0ZWRfcHJvZmlsZXMpW25hbWVzKHJldHdlZXRlZF9wcm9maWxlcykgPT0gJ3JldHdlZXRfbG9jYXRpb24nXSA8LSAnbG9jYXRpb24nCm5hbWVzKHJldHdlZXRlZF9wcm9maWxlcylbbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKSA9PSAncmV0d2VldF9zb3VyY2UnXSA8LSAnc291cmNlJwpuYW1lcyhyZXR3ZWV0ZWRfcHJvZmlsZXMpW25hbWVzKHJldHdlZXRlZF9wcm9maWxlcykgPT0gJ3JldHdlZXRfZmF2b3JpdGVfY291bnQnXSA8LSAnZmF2b3JpdGVfY291bnQnCm5hbWVzKHJldHdlZXRlZF9wcm9maWxlcylbbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKSA9PSAncmV0d2VldF9yZXR3ZWV0X2NvdW50J10gPC0gJ3JldHdlZXRfY291bnQnCm5hbWVzKHJldHdlZXRlZF9wcm9maWxlcylbbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKSA9PSAncmV0d2VldF9zdGF0dXNlc19jb3VudCddIDwtICdzdGF0dXNlc19jb3VudCcKbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKVtuYW1lcyhyZXR3ZWV0ZWRfcHJvZmlsZXMpID09ICdyZXR3ZWV0X2ZvbGxvd2Vyc19jb3VudCddIDwtICdmb2xsb3dlcnNfY291bnQnCm5hbWVzKHJldHdlZXRlZF9wcm9maWxlcylbbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKSA9PSAncmV0d2VldF9mcmllbmRzX2NvdW50J10gPC0gJ2ZyaWVuZHNfY291bnQnCmBgYAoKYGBge3J9CnF1b3RlZF9wcm9maWxlc19oZWFkZXJzIDwtIGMoCiAgJ3F1b3RlZF91c2VyX2lkJywKICAncXVvdGVkX3NjcmVlbl9uYW1lJywKICAncXVvdGVkX3ZlcmlmaWVkJywKICAncXVvdGVkX2xvY2F0aW9uJywKICAncXVvdGVkX3NvdXJjZScsCiAgJ3F1b3RlZF9mYXZvcml0ZV9jb3VudCcsCiAgJ3F1b3RlZF9yZXR3ZWV0X2NvdW50JywKICAncXVvdGVkX3N0YXR1c2VzX2NvdW50JywKICAncXVvdGVkX2ZvbGxvd2Vyc19jb3VudCcsCiAgJ3F1b3RlZF9mcmllbmRzX2NvdW50JwopCnF1b3RlZF9wcm9maWxlcyA9IHByb2ZpbGVzWyxxdW90ZWRfcHJvZmlsZXNfaGVhZGVyc10KCm5hbWVzKHF1b3RlZF9wcm9maWxlcylbbmFtZXMocXVvdGVkX3Byb2ZpbGVzKSA9PSAncXVvdGVkX3VzZXJfaWQnXSA8LSAndXNlcl9pZCcKbmFtZXMocXVvdGVkX3Byb2ZpbGVzKVtuYW1lcyhxdW90ZWRfcHJvZmlsZXMpID09ICdxdW90ZWRfc2NyZWVuX25hbWUnXSA8LSAnc2NyZWVuX25hbWUnCm5hbWVzKHF1b3RlZF9wcm9maWxlcylbbmFtZXMocXVvdGVkX3Byb2ZpbGVzKSA9PSAncXVvdGVkX3ZlcmlmaWVkJ10gPC0gJ3ZlcmlmaWVkJwpuYW1lcyhxdW90ZWRfcHJvZmlsZXMpW25hbWVzKHF1b3RlZF9wcm9maWxlcykgPT0gJ3F1b3RlZF9sb2NhdGlvbiddIDwtICdsb2NhdGlvbicKbmFtZXMocXVvdGVkX3Byb2ZpbGVzKVtuYW1lcyhxdW90ZWRfcHJvZmlsZXMpID09ICdxdW90ZWRfc291cmNlJ10gPC0gJ3NvdXJjZScKbmFtZXMocXVvdGVkX3Byb2ZpbGVzKVtuYW1lcyhxdW90ZWRfcHJvZmlsZXMpID09ICdxdW90ZWRfZmF2b3JpdGVfY291bnQnXSA8LSAnZmF2b3JpdGVfY291bnQnCm5hbWVzKHF1b3RlZF9wcm9maWxlcylbbmFtZXMocXVvdGVkX3Byb2ZpbGVzKSA9PSAncXVvdGVkX3JldHdlZXRfY291bnQnXSA8LSAncmV0d2VldF9jb3VudCcKbmFtZXMocXVvdGVkX3Byb2ZpbGVzKVtuYW1lcyhxdW90ZWRfcHJvZmlsZXMpID09ICdxdW90ZWRfc3RhdHVzZXNfY291bnQnXSA8LSAnc3RhdHVzZXNfY291bnQnCm5hbWVzKHF1b3RlZF9wcm9maWxlcylbbmFtZXMocXVvdGVkX3Byb2ZpbGVzKSA9PSAncXVvdGVkX2ZvbGxvd2Vyc19jb3VudCddIDwtICdmb2xsb3dlcnNfY291bnQnCm5hbWVzKHF1b3RlZF9wcm9maWxlcylbbmFtZXMocXVvdGVkX3Byb2ZpbGVzKSA9PSAncXVvdGVkX2ZyaWVuZHNfY291bnQnXSA8LSAnZnJpZW5kc19jb3VudCcKYGBgCgpDb21iaW5hbW9zIHkgYXBsaWNhbW9zIHRyYW5zZm9ybWFjaW9uZXMKYGBge3J9CmNvbWJpbmVkX3Byb2ZpbGVzID0gcmJpbmQob3JpZ2luYWxfcHJvZmlsZXMsIHJldHdlZXRlZF9wcm9maWxlcywgcXVvdGVkX3Byb2ZpbGVzKQoKIyBTaSBidXNjYW1vcyBkdXBsaWNhZG9zIGVuIHRvZGFzIGxhcyBjb2x1bW5hcyBoYXkgdmFyaWFjaW9uZXMgZGUgZm9sbG93ZXJzIGVudHJlIHVzdWFyaW9zCiN0d2VldF9wcm9maWxlc19kZiA9IGNvbWJpbmVkX3Byb2ZpbGVzWyFkdXBsaWNhdGVkKGNvbWJpbmVkX3Byb2ZpbGVzKSxdCgp0d2VldF9wcm9maWxlc19kZiA9IGNvbWJpbmVkX3Byb2ZpbGVzWyFkdXBsaWNhdGVkKGNvbWJpbmVkX3Byb2ZpbGVzWywidXNlcl9pZCJdKSxdCgpzdW1tYXJ5KHR3ZWV0X3Byb2ZpbGVzX2RmKQpgYGAKClRyYW5zZm9ybWFjacOzbmVzIGRlbCBkYXRhZnJhbWUgZGUgcHJvZmlsZXMKYGBge3J9ClZpZXcodHdlZXRfcHJvZmlsZXNfZGYpCgpgYGAKCgpTb3VyY2VzIEFuYWx5c2lzCmBgYHtyfQpzb3VyY2VzID0gYXMuZGF0YS5mcmFtZSgKICB0YWJsZSgKICAgIHR3ZWV0X3Byb2ZpbGVzX2RmWwogICAgICAhaXMubmEodHdlZXRfcHJvZmlsZXNfZGZbLCJzb3VyY2UiXSksCiAgICAgICJzb3VyY2UiXQogICAgKQopCgpuYW1lcyhzb3VyY2VzKVsxXSA9ICJzb3VyY2UiCm5hbWVzKHNvdXJjZXMpWzJdID0gImNvdW50IgoKc291cmNlcyA9IHNvdXJjZXNbCiAgb3JkZXIoCiAgICBzb3VyY2VzWyJjb3VudCJdLCAKICAgIGRlY3JlYXNpbmcgPSBUUlVFCiAgKSwKXQoKVmlldyhzb3VyY2VzKQpgYGAKCkxvY2F0aW9uIEFuYWx5c2lzCmBgYHtyfQpsb2NhdGlvbnMgPSBhcy5kYXRhLmZyYW1lKAogIHRhYmxlKAogICAgdHdlZXRfcHJvZmlsZXNfZGZbCiAgICAgICFpcy5uYSh0d2VldF9wcm9maWxlc19kZlssImxvY2F0aW9uIl0pLAogICAgICAibG9jYXRpb24iXQogICAgKQopCgpuYW1lcyhsb2NhdGlvbnMpWzFdID0gImxvY2F0aW9uIgpuYW1lcyhsb2NhdGlvbnMpWzJdID0gImNvdW50IgoKbG9jYXRpb25zID0gbG9jYXRpb25zWwogIG9yZGVyKAogICAgbG9jYXRpb25zWyJjb3VudCJdLCAKICAgIGRlY3JlYXNpbmcgPSBUUlVFCiAgKSwKXQoKVmlldyhsb2NhdGlvbnMpCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRE1VQkEgVFAwMSIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKQ2FyZ2EgaW5pY2lhbCBkZWwgZGF0YWZyYW1lIGRlIHR3ZWV0cyBDT1ZJRC0xOQpgYGB7cn0KbGlicmFyeShtb25nb2xpdGUpCmxpYnJhcnkoZ2dwbG90MikKbGlicmFyeShkcGx5cikKCnR3ZWV0c19tb25nb19jb3ZpZDE5IDwtIG1vbmdvKAogIGNvbGxlY3Rpb24gPSAidHdlZXRzX21vbmdvX2NvdmlkMTkiLCAKICBkYiA9ICJETVVCQSIKKQpgYGAKCiMgQW7DoWxpc2lzIGRlIFBlcmZpbGVzCiMjIERlc3BsZWdhbW9zIHRvZG9zIGxvcyBwZXJmaWxlcwpgYGB7cn0KcHJvZmlsZXMgPSB0d2VldHNfbW9uZ29fY292aWQxOSRmaW5kKGZpZWxkcz0KJ3sKICAgICAgInVzZXJfaWQiOiAxLAogICAgICAic2NyZWVuX25hbWUiOiAxLAogICAgICAidmVyaWZpZWQiOiAxLAogICAgICAibG9jYXRpb24iOiAxLAogICAgICAic291cmNlIjogMSwKICAgICAgImZhdm9yaXRlX2NvdW50IjogMSwKICAgICAgInJldHdlZXRfY291bnQiOiAxLAogICAgICAic3RhdHVzZXNfY291bnQiOiAxLAogICAgICAiZm9sbG93ZXJzX2NvdW50IjogMSwKICAgICAgImZyaWVuZHNfY291bnQiOiAxLAogICAgICAgIAogICAgICAicmV0d2VldF91c2VyX2lkIjogMSwKICAgICAgInJldHdlZXRfc2NyZWVuX25hbWUiOiAxLAogICAgICAicmV0d2VldF92ZXJpZmllZCI6IDEsCiAgICAgICJyZXR3ZWV0X2xvY2F0aW9uIjogMSwKICAgICAgInJldHdlZXRfc291cmNlIjogMSwKICAgICAgInJldHdlZXRfZmF2b3JpdGVfY291bnQiOiAxLAogICAgICAicmV0d2VldF9yZXR3ZWV0X2NvdW50IjogMSwKICAgICAgInJldHdlZXRfc3RhdHVzZXNfY291bnQiOiAxLAogICAgICAicmV0d2VldF9mb2xsb3dlcnNfY291bnQiOiAxLAogICAgICAicmV0d2VldF9mcmllbmRzX2NvdW50IjogMSwKICAgICAgCiAgICAgICJxdW90ZWRfdXNlcl9pZCI6IDEsCiAgICAgICJxdW90ZWRfc2NyZWVuX25hbWUiOiAxLAogICAgICAicXVvdGVkX3ZlcmlmaWVkIjogMSwKICAgICAgInF1b3RlZF9sb2NhdGlvbiI6IDEsCiAgICAgICJxdW90ZWRfc291cmNlIjogMSwKICAgICAgInF1b3RlZF9mYXZvcml0ZV9jb3VudCI6IDEsCiAgICAgICJxdW90ZWRfcmV0d2VldF9jb3VudCI6IDEsCiAgICAgICJxdW90ZWRfc3RhdHVzZXNfY291bnQiOiAxLAogICAgICAicXVvdGVkX2ZvbGxvd2Vyc19jb3VudCI6IDEsCiAgICAgICJxdW90ZWRfZnJpZW5kc19jb3VudCI6IDEKfScKKQpgYGAKCiMjIENvbWJpbmFtb3MgbG9zIHBlcmZpbGVzIGRlIGxvcyB0d2VldHMgb3JpZ2luYWxlcywgcmV0d2VldHMgeSBxdW90ZXMgaW52b2x1Y3JhZG9zCmBgYHtyfQpvcmlnaW5hbF9wcm9maWxlc19oZWFkZXIgPC0gYygKICAndXNlcl9pZCcsCiAgJ3NjcmVlbl9uYW1lJywKICAndmVyaWZpZWQnLAogICdsb2NhdGlvbicsCiAgJ3NvdXJjZScsCiAgJ2Zhdm9yaXRlX2NvdW50JywKICAncmV0d2VldF9jb3VudCcsCiAgJ3N0YXR1c2VzX2NvdW50JywKICAnZm9sbG93ZXJzX2NvdW50JywKICAnZnJpZW5kc19jb3VudCcKKQpvcmlnaW5hbF9wcm9maWxlcyA9IHByb2ZpbGVzWyxvcmlnaW5hbF9wcm9maWxlc19oZWFkZXJdCmBgYAoKYGBge3J9CnJldHdlZXRlZF9wcm9maWxlc19oZWFkZXIgPC0gYygKICAncmV0d2VldF91c2VyX2lkJywKICAncmV0d2VldF9zY3JlZW5fbmFtZScsCiAgJ3JldHdlZXRfdmVyaWZpZWQnLAogICdyZXR3ZWV0X2xvY2F0aW9uJywKICAncmV0d2VldF9zb3VyY2UnLAogICdyZXR3ZWV0X2Zhdm9yaXRlX2NvdW50JywKICAncmV0d2VldF9yZXR3ZWV0X2NvdW50JywKICAncmV0d2VldF9zdGF0dXNlc19jb3VudCcsCiAgJ3JldHdlZXRfZm9sbG93ZXJzX2NvdW50JywKICAncmV0d2VldF9mcmllbmRzX2NvdW50JwopCgpyZXR3ZWV0ZWRfcHJvZmlsZXMgPSBwcm9maWxlc1sscmV0d2VldGVkX3Byb2ZpbGVzX2hlYWRlcl0KCm5hbWVzKHJldHdlZXRlZF9wcm9maWxlcylbbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKSA9PSAncmV0d2VldF91c2VyX2lkJ10gPC0gJ3VzZXJfaWQnCm5hbWVzKHJldHdlZXRlZF9wcm9maWxlcylbbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKSA9PSAncmV0d2VldF9zY3JlZW5fbmFtZSddIDwtICdzY3JlZW5fbmFtZScKbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKVtuYW1lcyhyZXR3ZWV0ZWRfcHJvZmlsZXMpID09ICdyZXR3ZWV0X3ZlcmlmaWVkJ10gPC0gJ3ZlcmlmaWVkJwpuYW1lcyhyZXR3ZWV0ZWRfcHJvZmlsZXMpW25hbWVzKHJldHdlZXRlZF9wcm9maWxlcykgPT0gJ3JldHdlZXRfbG9jYXRpb24nXSA8LSAnbG9jYXRpb24nCm5hbWVzKHJldHdlZXRlZF9wcm9maWxlcylbbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKSA9PSAncmV0d2VldF9zb3VyY2UnXSA8LSAnc291cmNlJwpuYW1lcyhyZXR3ZWV0ZWRfcHJvZmlsZXMpW25hbWVzKHJldHdlZXRlZF9wcm9maWxlcykgPT0gJ3JldHdlZXRfZmF2b3JpdGVfY291bnQnXSA8LSAnZmF2b3JpdGVfY291bnQnCm5hbWVzKHJldHdlZXRlZF9wcm9maWxlcylbbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKSA9PSAncmV0d2VldF9yZXR3ZWV0X2NvdW50J10gPC0gJ3JldHdlZXRfY291bnQnCm5hbWVzKHJldHdlZXRlZF9wcm9maWxlcylbbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKSA9PSAncmV0d2VldF9zdGF0dXNlc19jb3VudCddIDwtICdzdGF0dXNlc19jb3VudCcKbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKVtuYW1lcyhyZXR3ZWV0ZWRfcHJvZmlsZXMpID09ICdyZXR3ZWV0X2ZvbGxvd2Vyc19jb3VudCddIDwtICdmb2xsb3dlcnNfY291bnQnCm5hbWVzKHJldHdlZXRlZF9wcm9maWxlcylbbmFtZXMocmV0d2VldGVkX3Byb2ZpbGVzKSA9PSAncmV0d2VldF9mcmllbmRzX2NvdW50J10gPC0gJ2ZyaWVuZHNfY291bnQnCmBgYAoKYGBge3J9CnF1b3RlZF9wcm9maWxlc19oZWFkZXJzIDwtIGMoCiAgJ3F1b3RlZF91c2VyX2lkJywKICAncXVvdGVkX3NjcmVlbl9uYW1lJywKICAncXVvdGVkX3ZlcmlmaWVkJywKICAncXVvdGVkX2xvY2F0aW9uJywKICAncXVvdGVkX3NvdXJjZScsCiAgJ3F1b3RlZF9mYXZvcml0ZV9jb3VudCcsCiAgJ3F1b3RlZF9yZXR3ZWV0X2NvdW50JywKICAncXVvdGVkX3N0YXR1c2VzX2NvdW50JywKICAncXVvdGVkX2ZvbGxvd2Vyc19jb3VudCcsCiAgJ3F1b3RlZF9mcmllbmRzX2NvdW50JwopCnF1b3RlZF9wcm9maWxlcyA9IHByb2ZpbGVzWyxxdW90ZWRfcHJvZmlsZXNfaGVhZGVyc10KCm5hbWVzKHF1b3RlZF9wcm9maWxlcylbbmFtZXMocXVvdGVkX3Byb2ZpbGVzKSA9PSAncXVvdGVkX3VzZXJfaWQnXSA8LSAndXNlcl9pZCcKbmFtZXMocXVvdGVkX3Byb2ZpbGVzKVtuYW1lcyhxdW90ZWRfcHJvZmlsZXMpID09ICdxdW90ZWRfc2NyZWVuX25hbWUnXSA8LSAnc2NyZWVuX25hbWUnCm5hbWVzKHF1b3RlZF9wcm9maWxlcylbbmFtZXMocXVvdGVkX3Byb2ZpbGVzKSA9PSAncXVvdGVkX3ZlcmlmaWVkJ10gPC0gJ3ZlcmlmaWVkJwpuYW1lcyhxdW90ZWRfcHJvZmlsZXMpW25hbWVzKHF1b3RlZF9wcm9maWxlcykgPT0gJ3F1b3RlZF9sb2NhdGlvbiddIDwtICdsb2NhdGlvbicKbmFtZXMocXVvdGVkX3Byb2ZpbGVzKVtuYW1lcyhxdW90ZWRfcHJvZmlsZXMpID09ICdxdW90ZWRfc291cmNlJ10gPC0gJ3NvdXJjZScKbmFtZXMocXVvdGVkX3Byb2ZpbGVzKVtuYW1lcyhxdW90ZWRfcHJvZmlsZXMpID09ICdxdW90ZWRfZmF2b3JpdGVfY291bnQnXSA8LSAnZmF2b3JpdGVfY291bnQnCm5hbWVzKHF1b3RlZF9wcm9maWxlcylbbmFtZXMocXVvdGVkX3Byb2ZpbGVzKSA9PSAncXVvdGVkX3JldHdlZXRfY291bnQnXSA8LSAncmV0d2VldF9jb3VudCcKbmFtZXMocXVvdGVkX3Byb2ZpbGVzKVtuYW1lcyhxdW90ZWRfcHJvZmlsZXMpID09ICdxdW90ZWRfc3RhdHVzZXNfY291bnQnXSA8LSAnc3RhdHVzZXNfY291bnQnCm5hbWVzKHF1b3RlZF9wcm9maWxlcylbbmFtZXMocXVvdGVkX3Byb2ZpbGVzKSA9PSAncXVvdGVkX2ZvbGxvd2Vyc19jb3VudCddIDwtICdmb2xsb3dlcnNfY291bnQnCm5hbWVzKHF1b3RlZF9wcm9maWxlcylbbmFtZXMocXVvdGVkX3Byb2ZpbGVzKSA9PSAncXVvdGVkX2ZyaWVuZHNfY291bnQnXSA8LSAnZnJpZW5kc19jb3VudCcKYGBgCgojIyBDb21iaW5hbW9zIHkgYXBsaWNhbW9zIHRyYW5zZm9ybWFjaW9uZXMKYGBge3J9CmNvbWJpbmVkX3Byb2ZpbGVzID0gcmJpbmQob3JpZ2luYWxfcHJvZmlsZXMsIHJldHdlZXRlZF9wcm9maWxlcywgcXVvdGVkX3Byb2ZpbGVzKQoKIyBTaSBidXNjYW1vcyBkdXBsaWNhZG9zIGVuIHRvZGFzIGxhcyBjb2x1bW5hcyBoYXkgdmFyaWFjaW9uZXMgZGUgZm9sbG93ZXJzIGVudHJlIHVzdWFyaW9zCiN0d2VldF9wcm9maWxlc19kZiA9IGNvbWJpbmVkX3Byb2ZpbGVzWyFkdXBsaWNhdGVkKGNvbWJpbmVkX3Byb2ZpbGVzKSxdCgp0d2VldF9wcm9maWxlc19kZiA9IGNvbWJpbmVkX3Byb2ZpbGVzWyFkdXBsaWNhdGVkKGNvbWJpbmVkX3Byb2ZpbGVzWywidXNlcl9pZCJdKSxdCgpzdW1tYXJ5KHR3ZWV0X3Byb2ZpbGVzX2RmKQpgYGAKCkFuYWxpc2lzIGRlIHBlcmZpbGVzIHNvYnJlIHBsYXRhZm9ybWEKYGBge3J9CgoKYGBgCgoKIyMgU291cmNlcyBBbmFseXNpcwpgYGB7cn0Kc291cmNlcyA9IGFzLmRhdGEuZnJhbWUoCiAgdGFibGUoCiAgICB0d2VldF9wcm9maWxlc19kZlsKICAgICAgIWlzLm5hKHR3ZWV0X3Byb2ZpbGVzX2RmWywic291cmNlIl0pLAogICAgICAic291cmNlIl0KICAgICkKKQoKbmFtZXMoc291cmNlcylbMV0gPSAic291cmNlIgpuYW1lcyhzb3VyY2VzKVsyXSA9ICJjb3VudCIKCnNvdXJjZXMgPSBzb3VyY2VzWwogIG9yZGVyKAogICAgc291cmNlc1siY291bnQiXSwgCiAgICBkZWNyZWFzaW5nID0gVFJVRQogICksCl0KClZpZXcoc291cmNlcykKYGBgCgojIyBMb2NhdGlvbiBBbmFseXNpcwpgYGB7cn0KbG9jYXRpb25zID0gYXMuZGF0YS5mcmFtZSgKICB0YWJsZSgKICAgIHR3ZWV0X3Byb2ZpbGVzX2RmWwogICAgICAhaXMubmEodHdlZXRfcHJvZmlsZXNfZGZbLCJsb2NhdGlvbiJdKSwKICAgICAgImxvY2F0aW9uIl0KICAgICkKKQoKbmFtZXMobG9jYXRpb25zKVsxXSA9ICJsb2NhdGlvbiIKbmFtZXMobG9jYXRpb25zKVsyXSA9ICJjb3VudCIKCmxvY2F0aW9ucyA9IGxvY2F0aW9uc1sKICBvcmRlcigKICAgIGxvY2F0aW9uc1siY291bnQiXSwgCiAgICBkZWNyZWFzaW5nID0gVFJVRQogICksCl0KClZpZXcobG9jYXRpb25zKQpgYGAKCiMgMykgVXN1YXJpb3MgY29uIG1heW9yIHJlcGVyY3VzacOzbiAocmV0d2VldF9jb3VudCkKYGBge3J9CnRvcF91c2Vyc19ieV9yZXR3ZWV0X2NvdW50PWNvbWJpbmVkX3Byb2ZpbGVzCgojT3JkZW5hbW9zIHBvciByZXR3ZWV0X2NvdW50IGRlIG1hbmVyYSBkZWNyZWNpZW50ZSwgaGF5IG1pc21vcyB0dyBjb24gZGlzdGludG8gcmV0d2VldF9jb3VudAp0b3BfdXNlcnNfYnlfcmV0d2VldF9jb3VudD0gdG9wX3VzZXJzX2J5X3JldHdlZXRfY291bnQgJT4lCiAgZ3JvdXBfYnkodXNlcl9pZCkgJT4lCiAgYXJyYW5nZSgtcmV0d2VldF9jb3VudCkgJT4lCiAgZmlsdGVyKHJvd19udW1iZXIoKT09MSkKClZpZXcoCiAgaGVhZCh0b3BfdXNlcnNfYnlfcmV0d2VldF9jb3VudCkKKQpgYGAKClJlc3BlY3RvIGEgbG9zIHJlcGxpZXMsIHNvbG8gMzggY2Fzb3MgZGUgMTQ4NyBjdWVudGFuIGNvbiAxIG8gbcOhcyBSVApSZXNwZWN0byBhIGxvcyBxdW90ZXMsIHPDs2xvIGNvbnRhbW9zIGNvbiBlbCBuw7ptZXJvIGRlIFF1b3RlcyBkZSBhcXVlbGxvcyBxdWUgc29uIFRXLCB0b2RvcyBsb3MgcmVnaXN0cm9zIHNlIGVuY3VlbnRyYW4gZW4gMC4KCiMjIFR3ZWV0cyBkZSBtYXlvciBpbXBhY3RvCmBgYHtyfQpkZl90d2VldHMgPSB0d2VldHNfbW9uZ29fY292aWQxOSRmaW5kKGZpZWxkcz0KJ3sKICAgICAgInN0YXR1c19pZCI6IDEsCiAgICAgICJ1c2VyX2lkIjogMSwKICAgICAgInNjcmVlbl9uYW1lIjogMSwKICAgICAgInZlcmlmaWVkIjogMSwKICAgICAgImxvY2F0aW9uIjogMSwKICAgICAgInNvdXJjZSI6IDEsCiAgICAgICJmYXZvcml0ZV9jb3VudCI6IDEsCiAgICAgICJyZXR3ZWV0X2NvdW50IjogMSwKICAgICAgInN0YXR1c2VzX2NvdW50IjogMSwKICAgICAgImZvbGxvd2Vyc19jb3VudCI6IDEsCiAgICAgICJmcmllbmRzX2NvdW50IjogMSwKICAgICAgICAKICAgICAgInJldHdlZXRfc3RhdHVzX2lkIjogMSwgIAogICAgICAicmV0d2VldF91c2VyX2lkIjogMSwKICAgICAgInJldHdlZXRfc2NyZWVuX25hbWUiOiAxLAogICAgICAicmV0d2VldF92ZXJpZmllZCI6IDEsCiAgICAgICJyZXR3ZWV0X2xvY2F0aW9uIjogMSwKICAgICAgInJldHdlZXRfc291cmNlIjogMSwKICAgICAgInJldHdlZXRfZmF2b3JpdGVfY291bnQiOiAxLAogICAgICAicmV0d2VldF9yZXR3ZWV0X2NvdW50IjogMSwKICAgICAgInJldHdlZXRfc3RhdHVzZXNfY291bnQiOiAxLAogICAgICAicmV0d2VldF9mb2xsb3dlcnNfY291bnQiOiAxLAogICAgICAicmV0d2VldF9mcmllbmRzX2NvdW50IjogMSwKICAgICAgCiAgICAgICJxdW90ZWRfc3RhdHVzX2lkIjogMSwgIAogICAgICAicXVvdGVkX3VzZXJfaWQiOiAxLAogICAgICAicXVvdGVkX3NjcmVlbl9uYW1lIjogMSwKICAgICAgInF1b3RlZF92ZXJpZmllZCI6IDEsCiAgICAgICJxdW90ZWRfbG9jYXRpb24iOiAxLAogICAgICAicXVvdGVkX3NvdXJjZSI6IDEsCiAgICAgICJxdW90ZWRfZmF2b3JpdGVfY291bnQiOiAxLAogICAgICAicXVvdGVkX3JldHdlZXRfY291bnQiOiAxLAogICAgICAicXVvdGVkX3N0YXR1c2VzX2NvdW50IjogMSwKICAgICAgInF1b3RlZF9mb2xsb3dlcnNfY291bnQiOiAxLAogICAgICAicXVvdGVkX2ZyaWVuZHNfY291bnQiOiAxCn0nCikKYGBgCgpgYGB7cn0KVmlldyhkZl90d2VldHMpCmBgYAoKIyBDb21iaW5hbW9zIFR3ZWV0cwpgYGB7cn0Kb3JpZ2luYWxfdHdlZXRzX2hlYWRlciA8LSBjKAogICdzdGF0dXNfaWQnLAogICd1c2VyX2lkJywKICAnc2NyZWVuX25hbWUnLAogICd2ZXJpZmllZCcsCiAgJ2xvY2F0aW9uJywKICAnc291cmNlJywKICAnZmF2b3JpdGVfY291bnQnLAogICdyZXR3ZWV0X2NvdW50JywKICAnc3RhdHVzZXNfY291bnQnLAogICdmb2xsb3dlcnNfY291bnQnLAogICdmcmllbmRzX2NvdW50JwopCm9yaWdpbmFsX3R3ZWV0cyA9IGRmX3R3ZWV0c1ssb3JpZ2luYWxfdHdlZXRzX2hlYWRlcl0KCmBgYAoKYGBge3J9CnJldHdlZXRlZF90d2VldHNfaGVhZGVyIDwtIGMoCiAgJ3JldHdlZXRfc3RhdHVzX2lkJywKICAncmV0d2VldF91c2VyX2lkJywKICAncmV0d2VldF9zY3JlZW5fbmFtZScsCiAgJ3JldHdlZXRfdmVyaWZpZWQnLAogICdyZXR3ZWV0X2xvY2F0aW9uJywKICAncmV0d2VldF9zb3VyY2UnLAogICdyZXR3ZWV0X2Zhdm9yaXRlX2NvdW50JywKICAncmV0d2VldF9yZXR3ZWV0X2NvdW50JywKICAncmV0d2VldF9zdGF0dXNlc19jb3VudCcsCiAgJ3JldHdlZXRfZm9sbG93ZXJzX2NvdW50JywKICAncmV0d2VldF9mcmllbmRzX2NvdW50JwopCgpyZXR3ZWV0ZWRfdHdlZXRzID0gZGZfdHdlZXRzWyxyZXR3ZWV0ZWRfdHdlZXRzX2hlYWRlcl0KCm5hbWVzKHJldHdlZXRlZF90d2VldHMpW25hbWVzKHJldHdlZXRlZF90d2VldHMpID09ICdyZXR3ZWV0X3N0YXR1c19pZCddIDwtICdzdGF0dXNfaWQnCm5hbWVzKHJldHdlZXRlZF90d2VldHMpW25hbWVzKHJldHdlZXRlZF90d2VldHMpID09ICdyZXR3ZWV0X3VzZXJfaWQnXSA8LSAndXNlcl9pZCcKbmFtZXMocmV0d2VldGVkX3R3ZWV0cylbbmFtZXMocmV0d2VldGVkX3R3ZWV0cykgPT0gJ3JldHdlZXRfc2NyZWVuX25hbWUnXSA8LSAnc2NyZWVuX25hbWUnCm5hbWVzKHJldHdlZXRlZF90d2VldHMpW25hbWVzKHJldHdlZXRlZF90d2VldHMpID09ICdyZXR3ZWV0X3ZlcmlmaWVkJ10gPC0gJ3ZlcmlmaWVkJwpuYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKVtuYW1lcyhyZXR3ZWV0ZWRfdHdlZXRzKSA9PSAncmV0d2VldF9sb2NhdGlvbiddIDwtICdsb2NhdGlvbicKbmFtZXMocmV0d2VldGVkX3R3ZWV0cylbbmFtZXMocmV0d2VldGVkX3R3ZWV0cykgPT0gJ3JldHdlZXRfc291cmNlJ10gPC0gJ3NvdXJjZScKbmFtZXMocmV0d2VldGVkX3R3ZWV0cylbbmFtZXMocmV0d2VldGVkX3R3ZWV0cykgPT0gJ3JldHdlZXRfZmF2b3JpdGVfY291bnQnXSA8LSAnZmF2b3JpdGVfY291bnQnCm5hbWVzKHJldHdlZXRlZF90d2VldHMpW25hbWVzKHJldHdlZXRlZF90d2VldHMpID09ICdyZXR3ZWV0X3JldHdlZXRfY291bnQnXSA8LSAncmV0d2VldF9jb3VudCcKbmFtZXMocmV0d2VldGVkX3R3ZWV0cylbbmFtZXMocmV0d2VldGVkX3R3ZWV0cykgPT0gJ3JldHdlZXRfc3RhdHVzZXNfY291bnQnXSA8LSAnc3RhdHVzZXNfY291bnQnCm5hbWVzKHJldHdlZXRlZF90d2VldHMpW25hbWVzKHJldHdlZXRlZF90d2VldHMpID09ICdyZXR3ZWV0X2ZvbGxvd2Vyc19jb3VudCddIDwtICdmb2xsb3dlcnNfY291bnQnCm5hbWVzKHJldHdlZXRlZF90d2VldHMpW25hbWVzKHJldHdlZXRlZF90d2VldHMpID09ICdyZXR3ZWV0X2ZyaWVuZHNfY291bnQnXSA8LSAnZnJpZW5kc19jb3VudCcKCmBgYAoKYGBge3J9CnF1b3RlZF90d2VldHNfaGVhZGVyIDwtIGMoCiAgJ3F1b3RlZF9zdGF0dXNfaWQnLAogICdxdW90ZWRfdXNlcl9pZCcsCiAgJ3F1b3RlZF9zY3JlZW5fbmFtZScsCiAgJ3F1b3RlZF92ZXJpZmllZCcsCiAgJ3F1b3RlZF9sb2NhdGlvbicsCiAgJ3F1b3RlZF9zb3VyY2UnLAogICdxdW90ZWRfZmF2b3JpdGVfY291bnQnLAogICdxdW90ZWRfcmV0d2VldF9jb3VudCcsCiAgJ3F1b3RlZF9zdGF0dXNlc19jb3VudCcsCiAgJ3F1b3RlZF9mb2xsb3dlcnNfY291bnQnLAogICdxdW90ZWRfZnJpZW5kc19jb3VudCcKKQoKcXVvdGVkX3R3ZWV0cyA9IGRmX3R3ZWV0c1sscXVvdGVkX3R3ZWV0c19oZWFkZXJdCgpuYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX3N0YXR1c19pZCddIDwtICdzdGF0dXNfaWQnCm5hbWVzKHF1b3RlZF90d2VldHMpW25hbWVzKHF1b3RlZF90d2VldHMpID09ICdxdW90ZWRfdXNlcl9pZCddIDwtICd1c2VyX2lkJwpuYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX3NjcmVlbl9uYW1lJ10gPC0gJ3NjcmVlbl9uYW1lJwpuYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX3ZlcmlmaWVkJ10gPC0gJ3ZlcmlmaWVkJwpuYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX2xvY2F0aW9uJ10gPC0gJ2xvY2F0aW9uJwpuYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX3NvdXJjZSddIDwtICdzb3VyY2UnCm5hbWVzKHF1b3RlZF90d2VldHMpW25hbWVzKHF1b3RlZF90d2VldHMpID09ICdxdW90ZWRfZmF2b3JpdGVfY291bnQnXSA8LSAnZmF2b3JpdGVfY291bnQnCm5hbWVzKHF1b3RlZF90d2VldHMpW25hbWVzKHF1b3RlZF90d2VldHMpID09ICdxdW90ZWRfcmV0d2VldF9jb3VudCddIDwtICdyZXR3ZWV0X2NvdW50JwpuYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX3N0YXR1c2VzX2NvdW50J10gPC0gJ3N0YXR1c2VzX2NvdW50JwpuYW1lcyhxdW90ZWRfdHdlZXRzKVtuYW1lcyhxdW90ZWRfdHdlZXRzKSA9PSAncXVvdGVkX2ZvbGxvd2Vyc19jb3VudCddIDwtICdmb2xsb3dlcnNfY291bnQnCm5hbWVzKHF1b3RlZF90d2VldHMpW25hbWVzKHF1b3RlZF90d2VldHMpID09ICdxdW90ZWRfZnJpZW5kc19jb3VudCddIDwtICdmcmllbmRzX2NvdW50JwoKYGBgCgoKIzQpVHdlZXRzIGNvbiBtYXlvciByZXBlcmN1c2nDs24KYGBge3J9CmNvbWJpbmVkX3R3ZWV0cyA9IHJiaW5kKG9yaWdpbmFsX3R3ZWV0cywgcmV0d2VldGVkX3R3ZWV0cywgcXVvdGVkX3R3ZWV0cykKVmlldyhjb21iaW5lZF90d2VldHMpCnRvcF90d2VldHNfYnlfcmV0d2VldF9jb3VudD1jb21iaW5lZF90d2VldHMKI09yZGVuYW1vcyBwb3IgcmV0d2VldF9jb3VudCBkZSBtYW5lcmEgZGVjcmVjaWVudGUsIGhheSBtaXNtb3MgdHcgY29uIGRpc3RpbnRvIHJldHdlZXRfY291bnQKdG9wX3R3ZWV0c19ieV9yZXR3ZWV0X2NvdW50PSBkYXRhLmZyYW1lKHRvcF90d2VldHNfYnlfcmV0d2VldF9jb3VudCAlPiUKICBncm91cF9ieShzdGF0dXNfaWQpICU+JQogIGFycmFuZ2UoLXJldHdlZXRfY291bnQpICU+JQogIGZpbHRlcihyb3dfbnVtYmVyKCk9PTEpKQpWaWV3KGhlYWQodG9wX3R3ZWV0c19ieV9yZXR3ZWV0X2NvdW50KSkKCgpgYGAKClNvdXJjZXMgQW5hbHlzaXMgYnkgdHdlZXRzCmBgYHtyfQpzb3VyY2VzX2J5X3R3ZWV0cyA9IGFzLmRhdGEuZnJhbWUoCiAgdGFibGUoCiAgICB0b3BfdHdlZXRzX2J5X3JldHdlZXRfY291bnRbKAogICAgICAhaXMubmEodG9wX3R3ZWV0c19ieV9yZXR3ZWV0X2NvdW50Wywic291cmNlIl0pKSwKICAgICAgInNvdXJjZSJdCiAgICApCikKCm5hbWVzKHNvdXJjZXNfYnlfdHdlZXRzKVsxXSA9ICJzb3VyY2UiCm5hbWVzKHNvdXJjZXNfYnlfdHdlZXRzKVsyXSA9ICJjb3VudCIKCnNvdXJjZXNfYnlfdHdlZXRzID0gc291cmNlc19ieV90d2VldHNbCiAgb3JkZXIoCiAgICBzb3VyY2VzX2J5X3R3ZWV0c1siY291bnQiXSwgCiAgICBkZWNyZWFzaW5nID0gVFJVRQogICksCl0KClZpZXcoc291cmNlc19ieV90d2VldHMpCmBgYAoKIzUpQ29ycmVsYWNpw7NuIGNvbiBsb3MgcGVyZmlsZXMgZGUgbWF5b3IgaW1wYWN0bwojQ3JlYWNpw7NuIGRmIHZhcmlhYmxlcyBudW3DqXJpY2FzCmBgYHtyfQpudW1lcmljX3ZhcmlhYmxlcz1kYXRhLmZyYW1lKGNiaW5kKAogIHRvcF91c2Vyc19ieV9yZXR3ZWV0X2NvdW50JGZhdm9yaXRlX2NvdW50LAogIHRvcF91c2Vyc19ieV9yZXR3ZWV0X2NvdW50JHJldHdlZXRfY291bnQsCiAgdG9wX3VzZXJzX2J5X3JldHdlZXRfY291bnQkc3RhdHVzZXNfY291bnQsCiAgdG9wX3VzZXJzX2J5X3JldHdlZXRfY291bnQkZm9sbG93ZXJzX2NvdW50LAogIHRvcF91c2Vyc19ieV9yZXR3ZWV0X2NvdW50JGZyaWVuZHNfY291bnQKKSkKbmFtZXMobnVtZXJpY192YXJpYWJsZXMpPC1jKCJmYXZvcml0ZV9jb3VudCIsCiAgInJldHdlZXRfY291bnQiLAogICJzdGF0dXNlc19jb3VudCIsCiAgImZvbGxvd2Vyc19jb3VudCIsCiAgImZyaWVuZHNfY291bnQiKQpWaWV3KG51bWVyaWNfdmFyaWFibGVzKQpgYGAKCiNDb3JyZWxhY2nDs24gdmFyaWFibGVzIG51bcOpcmljYXMKYGBge3J9CmNvcihuYS5vbWl0KG51bWVyaWNfdmFyaWFibGVzKSkKYGBgCgojQ29ycmVsYWNpw7NuIHZhcmlhYmxlcyBudW3DqXJpY2FzIChlc2NhbGEgbG9nYXLDrXRtaWNhKQpgYGB7cn0KY29yKGxvZzEwKG5hLm9taXQobnVtZXJpY192YXJpYWJsZXMpKzEpKQpgYGAKCiNUZXN0IGRlIGluZGVwZW5kZW5jaWEgdmVyaWZpZWQKI1RvbWFtb3MgY29tbyBiYXNlIHBhcmEgcXVlIHVuIHR3ZWV0IHNlYSBwb3B1bGFyLCByZXR3ZWV0X2NvdW50ID49MTAwCmBgYHtyfQpNPWFzLnRhYmxlKHJiaW5kKGMoLDg4KSxjKDI1LDI1KSkpCmRpbW5hbWVzKE0pPWxpc3QoUG9wdWxhcj1jKCJTSSIsIk5PIiksVmVyaWZpZWQ9YygiU0kiLCJOTyIpKQpgYGAKCgpgYGB7cn0KdGFibGUodG9wX3VzZXJzX2J5X3JldHdlZXRfY291bnQkdmVyaWZpZWQpCnRhYmxlKHRvcF91c2Vyc19ieV9yZXR3ZWV0X2NvdW50JHJldHdlZXRfY291bnQ+PTEpCk09dGFibGUodG9wX3VzZXJzX2J5X3JldHdlZXRfY291bnQkdmVyaWZpZWQsdG9wX3VzZXJzX2J5X3JldHdlZXRfY291bnQkcmV0d2VldF9jb3VudD49MSkKZGltbmFtZXMoTSk9bGlzdChQb3B1bGFyPWMoIlNJIiwiTk8iKSxWZXJpZmllZD1jKCJTSSIsIk5PIikpClhzcT1jaGlzcS50ZXN0KE0pClhzcQpgYGAKCiNHcsOhZmljbyBkZSBtb3NhaWNvcwpgYGB7cn0KbW9zYWljcGxvdCh0KE0pLCBjb2w9YygibGlnaHRncmVlbiIsInBpbmsiKSwgbWFpbj0iVmVyaWZpY2FkbyB2cyBUd2VldHMgUG9wdWxhcmVzIikKYGBgCgojQ29tbyBjb25jbHVzacOzbiwgbm8gc29uIGluZGVwZW5kaWVudGVzIHF1ZSB0ZW5nYW4gUmV0d2VldHMgc2llbmRvIGN1ZW50YXMgdmVyaWZpY2FkYXMuCgoKIzkpTG9uZ2l0dWQgZGUgdGV4dG8gcG9yIHBsYXRhZm9ybWEKI0FybW8gZGYgY29uIHNvdXJjZSB5IGxvbmdpdHVkIGRlIHRleHRvLCB0b21hbmRvIGlzX3F1b3RlOmZhbHNlIHkgaXNfcmV0d2VldDpmYWxzZQpgYGB7cn0KZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzPWRhdGEuZnJhbWUodHdlZXRzX21vbmdvX2NvdmlkMTkkZmluZChxdWVyeSA9ICd7ImlzX3F1b3RlIiA6IGZhbHNlLCAiaXNfcmV0d2VldCIgOiBmYWxzZX0nLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogIGZpZWxkcz0KJ3sKICAgICAgInNvdXJjZSI6IDEsCiAgICAgICJkaXNwbGF5X3RleHRfd2lkdGgiOjEsCiAgICAgICJ0ZXh0IjoxCiAgICAgIAp9JwopKQpWaWV3KGRmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0cykKYGBgCgojQ3VlbnRhIGRlIG5lZ2F0aXZvcyB5IHRvdGFsZXMKYGBge3J9CnNvdXJjZXNfb3JpZ2luYWwgPSBhcy5kYXRhLmZyYW1lKAogIHRhYmxlKAogICAgZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzWwogICAgICAhaXMubmEoZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzWywiZGlzcGxheV90ZXh0X3dpZHRoIl0pLAogICAgICAic291cmNlIl0KICAgICkpCgpWaWV3KHNvdXJjZXNfb3JpZ2luYWwpCmBgYAoKI0dlbmVybyB1biBhdHJpYnV0byBjb24gdGlwbyBkZSBwbGF0YWZvcm1hCmBgYHtyfQpkZl9zb3VyY2VfdGV4dF93aWRodF9ieV9vcmlnaW5hbF90d2VldHNbZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzJHNvdXJjZSA9PSAiVHdpdHRlciBmb3IgQW5kcm9pZCIsICJwbGF0YWZvcm1hIl0gPSAiU21hcnRwaG9uZSIKZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzW2RmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0cyRzb3VyY2UgPT0gIlR3aXR0ZXIgZm9yIGlQaG9uZSIsICJwbGF0YWZvcm1hIl0gPSAiU21hcnRwaG9uZSIKZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzW2RmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0cyRzb3VyY2UgPT0gIlR3ZWV0RGVjayIsICJwbGF0YWZvcm1hIl0gPSAiRXNjcml0b3JpbyIKZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzJExvbmdpdHVkPW5jaGFyKGRmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0cyR0ZXh0KQpWaWV3KGRmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0cykKCmBgYAoKI01lZGlhbmEgZGUgbG9uZ2l0dWQgcG9yIHRpcG8gZGUgZnVlbnRlCmBgYHtyfQphZ2dyZWdhdGUoZGlzcGxheV90ZXh0X3dpZHRoIH4gc291cmNlLCBkYXRhPWRmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0cywgRlVOPW1lZGlhbikKYWdncmVnYXRlKGRpc3BsYXlfdGV4dF93aWR0aCB+IHBsYXRhZm9ybWEsIGRhdGE9ZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzLCBGVU49bWVkaWFuKQpgYGAKCiNCb3hwbG90IHBvciB0aXBvIGRlIGZ1ZW50ZQpgYGB7cn0KYm94cGxvdChkZl9zb3VyY2VfdGV4dF93aWRodF9ieV9vcmlnaW5hbF90d2VldHNbZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzJHBsYXRhZm9ybWE9PSJTbWFydHBob25lInwgICAgICAgICAgICAgICAgICAgICAgICAgIGRmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0cyRwbGF0YWZvcm1hPT0iRXNjcml0b3JpbyIsImRpc3BsYXlfdGV4dF93aWR0aCJdfgogICAgICAgICAgZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzW2RmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0cyRwbGF0YWZvcm1hPT0iU21hcnRwaG9uZSJ8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzJHBsYXRhZm9ybWE9PSJFc2NyaXRvcmlvIiwicGxhdGFmb3JtYSJdLG1haW49IkxvbmdpdHVkIGRlIHRleHRvLXBsYXRhZm9ybWEiLHlsYWI9IkxvbmdpdHVkIGRlIHRleHRvIiwgeGxhYj0iUGxhdGFmb3JtYSIpCmBgYAojRG9ibGUgY2xpY2sgc29icmUgbG9zIHR3ZWV0cyBkZSBlc2NyaXRvcmlvCmBgYHtyfQplc2NyaXRvcmlvPWRmX3NvdXJjZV90ZXh0X3dpZGh0X2J5X29yaWdpbmFsX3R3ZWV0c1soZGZfc291cmNlX3RleHRfd2lkaHRfYnlfb3JpZ2luYWxfdHdlZXRzJHBsYXRhZm9ybWE9PSJFc2NyaXRvcmlvIiksXQplc2NyaXRvcmlvWyghaXMubmEoZXNjcml0b3JpbyRkaXNwbGF5X3RleHRfd2lkdGgpKSxdCmBgYAoKCiM2KSBBbsOhbGlzaXMgZGUgb3V0bGllcnMKYGBge3J9Cms9MjAwCnBsb3QoaGVhZChsb2cxMCh0b3BfdXNlcnNfYnlfcmV0d2VldF9jb3VudCRyZXR3ZWV0X2NvdW50KzEpLGspLGhlYWQobG9nMTAodG9wX3VzZXJzX2J5X3JldHdlZXRfY291bnQkZmF2b3JpdGVfY291bnQrMSksaykpCmBgYAoKI0xvY2FsIG91dGxpZXIgZmFjdG9yCmBgYHtyfQpsaWJyYXJ5KFJsb2YpCms9MTAwCmRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnQ9ZGF0YS5mcmFtZShjYmluZChoZWFkKGxvZzEwKHRvcF91c2Vyc19ieV9yZXR3ZWV0X2NvdW50JHJldHdlZXRfY291bnQrMSksayksaGVhZChsb2cxMCh0b3BfdXNlcnNfYnlfcmV0d2VldF9jb3VudCRmYXZvcml0ZV9jb3VudCsxKSxrKSkpCm5hbWVzKGRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnQpPWMoInJldHdlZXRfY291bnQiLCJmYXZvcml0ZV9jb3VudCIpCiMgQ2FsY3VsYW1vcyBMT0YgcGFyYSBrPTMgdmVjaW5vcyBwb3IgaW5zdGFuY2lhCmRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnQkc2NvcmU8LWxvZihkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50LCBrPTIpCnVtYnJhbDwtMgpkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50JG91dGxpZXIgPC0gKGRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnQkc2NvcmU+dW1icmFsKQpkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50JGNvbG9yIDwtIGlmZWxzZShkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50JG91dGxpZXIsICJyZWQiLCAiYmxhY2siKQpWaWV3KGRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnQpCmdncGxvdChkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50LCBhZXMoeD1yZXR3ZWV0X2NvdW50LHk9ZmF2b3JpdGVfY291bnQsIGNvbG9yPW91dGxpZXIpKStnZW9tX3BvaW50KCkKYGBgCgojTWFoYWxhbm9iaXMsIHZlbW9zIGFxdWVsbG9zIGNhc29zIHF1ZSBzZSBhbGVqYW4gZGUgbGEgbGluZWFsaWRhZCwgbm8gbmVjZXNhcmlhbWVudGUgb3V0bGllcnMgdW5pZGltZW5zaW9uYWxlcy4KYGBge3J9CmRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnQkbWFoYWxhbm9iaXMgPC0gbWFoYWxhbm9iaXMoZGZfcmV0d2VldF9jb3VudF9mYXZvcml0ZV9jb3VudFssMToyXSwgY29sTWVhbnMoZGZfcmV0d2VldF9jb3VudF9mYXZvcml0ZV9jb3VudFssMToyXSksIGNvdihkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50WywxOjJdKSkKCiMgT3JkZW5hbW9zIGRlIGZvcm1hIGRlY3JlY2llbnRlLCBzZWc/biBlbCBzY29yZSBkZSBNYWhhbGFub2JpcwpkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50IDwtIGRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnRbb3JkZXIoZGZfcmV0d2VldF9jb3VudF9mYXZvcml0ZV9jb3VudCRtYWhhbGFub2JpcyxkZWNyZWFzaW5nID0gVFJVRSksXQoKIyBEZXNjYXJ0YW1vcyBsb3Mgb3V0bGllcnMgc2VnP24gdW4gdW1icmFsCnVtYnJhbDwtNQpkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50JG91dGxpZXIyIDwtIChkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50JG1haGFsYW5vYmlzPnVtYnJhbCkKCmdncGxvdChkZl9yZXR3ZWV0X2NvdW50X2Zhdm9yaXRlX2NvdW50LCBhZXMoeD1yZXR3ZWV0X2NvdW50LHk9ZmF2b3JpdGVfY291bnQsIGNvbG9yPW91dGxpZXIyKSkrZ2VvbV9wb2ludCgpCgpWaWV3KGRmX3JldHdlZXRfY291bnRfZmF2b3JpdGVfY291bnQpCmBgYAoK</div>
 
 
 

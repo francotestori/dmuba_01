@@ -7,6 +7,7 @@ Carga inicial del dataframe de tweets COVID-19
 ```{r}
 library(mongolite)
 library(ggplot2)
+library(stringr)
 library(dplyr)
 
 tweets_mongo_covid19 <- mongo(
@@ -189,6 +190,13 @@ hist(hashtag_count$log10, main="Log10: cantidad de tweets por hashtag")
 
 
 summary(hashtag_count)
+```
+
+Filtramos hashtags por alguna regex
+```{r}
+non_covid_hashtags = hashtag_count %>% filter(!str_detect(hashtags, regex('covid', ignore_case = T)))
+
+View(non_covid_hashtags)
 ```
 
 Hastags y numero de ocurrencias por usuarios
