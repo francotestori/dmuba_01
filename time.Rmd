@@ -1,0 +1,443 @@
+---
+title: "DMUBA TP01"
+output: html_notebook
+---
+
+Carga inicial del dataframe de tweets COVID-19
+```{r}
+library(tidyverse)
+library(mongolite)
+library(ggplot2)
+library(plotly)
+library(hrbrthemes)
+library(dplyr)
+library(here)
+
+tweets_mongo_covid19 <- mongo(
+  collection = "tweets_mongo_covid19", 
+  db = "DMUBA"
+)
+
+hitos_df <- read.csv(
+  here("resources" , "hitos_discretizado.csv")
+)
+```
+
+Mongo Query
+```{r}
+df_tweets = tweets_mongo_covid19$aggregate(
+'[
+  {
+      "$match": {}
+  },
+  {
+      "$project": {
+      
+      "status_id": 1,
+      "user_id": 1,
+      "screen_name": 1,
+      "verified": 1,
+      "location": 1,
+      "source": 1,
+      "favorite_count": 1,
+      "retweet_count": 1,
+      "created_at": {
+        "$dateToString": { "date": "$created_at"}
+      },
+
+      "retweet_status_id": 1,  
+      "retweet_user_id": 1,
+      "retweet_screen_name": 1,
+      "retweet_verified": 1,
+      "retweet_location": 1,
+      "retweet_source": 1,
+      "retweet_favorite_count": 1,
+      "retweet_retweet_count": 1,
+      "retweet_created_at": {
+        "$cond": { 
+          "if": { 
+            "$eq" : ["$retweet_created_at", {}] 
+          }, 
+          "then": null, 
+          "else": {
+            "$dateToString": {"date": "$retweet_created_at"}
+          }
+        }
+      },
+            
+      "quoted_status_id": 1,  
+      "quoted_user_id": 1,
+      "quoted_screen_name": 1,
+      "quoted_verified": 1,
+      "quoted_location": 1,
+      "quoted_source": 1,
+      "quoted_favorite_count": 1,
+      "quoted_retweet_count": 1,
+      "quoted_created_at": {
+        "$cond": { 
+          "if": { 
+            "$eq" : ["$quoted_created_at", {}] 
+          }, 
+          "then": null, 
+          "else": {
+            "$dateToString": {"date": "$quoted_created_at"}
+          }
+        }
+      }
+    }
+  }
+]'
+)
+```
+
+Unificamos tweets originales, retweets y quotes bajo atributos comunes.
+(
+  'status_id',
+  'user_id',
+  'screen_name',
+  'verified',
+  'location',
+  'source',
+  'favorite_count',
+  'retweet_count',
+  'created_at'
+)
+```{r}
+# Original Tweets
+original_tweets_header <- c(
+  'status_id',
+  'user_id',
+  'screen_name',
+  'verified',
+  'location',
+  'source',
+  'favorite_count',
+  'retweet_count',
+  'created_at'
+)
+original_tweets = df_tweets[,original_tweets_header]
+
+# Retweets
+retweeted_tweets_header <- c(
+  'retweet_status_id',
+  'retweet_user_id',
+  'retweet_screen_name',
+  'retweet_verified',
+  'retweet_location',
+  'retweet_source',
+  'retweet_favorite_count',
+  'retweet_retweet_count',
+  'retweet_created_at'
+)
+
+retweeted_tweets = df_tweets[,retweeted_tweets_header]
+
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_status_id'] <- 'status_id'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_user_id'] <- 'user_id'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_screen_name'] <- 'screen_name'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_verified'] <- 'verified'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_location'] <- 'location'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_source'] <- 'source'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_favorite_count'] <- 'favorite_count'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_retweet_count'] <- 'retweet_count'
+names(retweeted_tweets)[names(retweeted_tweets) == 'retweet_created_at'] <- 'created_at'
+
+# Quotes
+quoted_tweets_header <- c(
+  'quoted_status_id',
+  'quoted_user_id',
+  'quoted_screen_name',
+  'quoted_verified',
+  'quoted_location',
+  'quoted_source',
+  'quoted_favorite_count',
+  'quoted_retweet_count',
+  'quoted_created_at'
+)
+
+quoted_tweets = df_tweets[,quoted_tweets_header]
+
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_status_id'] <- 'status_id'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_user_id'] <- 'user_id'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_screen_name'] <- 'screen_name'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_verified'] <- 'verified'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_location'] <- 'location'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_source'] <- 'source'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_favorite_count'] <- 'favorite_count'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_retweet_count'] <- 'retweet_count'
+names(quoted_tweets)[names(quoted_tweets) == 'quoted_created_at'] <- 'created_at'
+```
+
+Combinamos los tweets y aplicamos formateo a los valores de fecha
+```{r}
+combined_tweets = rbind(original_tweets, retweeted_tweets, quoted_tweets)
+
+combined_tweets['created_at_R_date'] = as.POSIXct(
+  combined_tweets$created_at, 
+  format="%Y-%m-%dT", 
+  tz="UTC"
+)
+combined_tweets['created_at'] = as.POSIXct(
+  combined_tweets$created_at, 
+  format="%Y-%m-%dT%H:%M:%S", 
+  tz="UTC"
+)
+# Limpiamos duplicados
+combined_tweets = combined_tweets[!duplicated(combined_tweets),]
+combined_tweets[!is.na(combined_tweets['created_at_R_date']),]
+
+```
+
+Transformamos nuestro dataset de hitos
+```{r}
+hitos_df['Fecha'] = as.Date(hitos_df$Fecha, "%d/%m/%Y")
+hitos_df['Primera'] <- ifelse(hitos_df['Primera'] == "S", 1, 0) 
+```
+
+
+```{r}
+tweet_counts_by_date = as.data.frame(
+  combined_tweets %>%
+  group_by(created_at_R_date) %>%
+  count(created_at_R_date)
+)
+names(tweet_counts_by_date)[1] = 'date'
+names(tweet_counts_by_date)[2] = 'count'
+  
+summary(hitos_df)
+```
+
+```{r}
+# From summary
+hitos_min_date=as.POSIXct("2020-04-25")
+hitos_max_date=as.POSIXct("2020-05-15")
+
+tweet_counts_by_date_range = as.data.frame(
+  tweet_counts_by_date %>%
+    filter(date >= hitos_min_date & date <= hitos_max_date)
+)
+
+summary(tweet_counts_by_date_range)
+```
+
+Graficamos la cantidad de tweets por día
+```{r}
+# Usual area chart
+p <- tweet_counts_by_date_range %>%
+  ggplot( aes(x=date, y=count)) +
+    geom_area(fill="#69b3a2", alpha=0.5) +
+    geom_line(color="#69b3a2") +
+    ylab("tweets by news events dates") +
+    theme_ipsum()
+
+# Turn it interactive with ggplotly
+p <- ggplotly(p)
+p
+```
+
+
+# Exploramos el uso de hashtags
+Ya teniendo una primera impresión de la evolución de los tweets en base sus fechas, exploramos el uso de hashtags
+```{r}
+expanded_hashtags = tweets_mongo_covid19$aggregate(
+'[
+    {
+        "$unwind": "$hashtags"
+    },
+    {
+        "$project": {
+            "status_id": 1,
+            "verified": 1,
+            "location": 1,
+            "source": 1,
+            "created_at": {
+                "$dateToString": { "date": "$created_at"}
+            },
+            "favorite_count": 1,
+            "retweet_count": 1,
+
+            "retweet_status_id": 1,
+            "retweet_verified": 1,
+            "retweet_location":1,
+            "retweet_source": 1,
+            "retweet_created_at": {
+                "$cond": { 
+                    "if": { 
+                        "$eq" : ["$retweet_created_at", {}] 
+                    }, 
+                    "then": null, 
+                    "else": {
+                        "$dateToString": {"date": "$retweet_created_at"}
+                    }
+                }
+            },
+            "retweet_favorite_count": 1,
+            "retweet_retweet_count": 1,
+
+            "quoted_status_id": 1,
+            "quoted_verified": 1,
+            "quoted_location": 1,
+            "quoted_source": 1, 
+             "quoted_created_at": {
+                "$cond": { 
+                    "if": { 
+                        "$eq" : ["$quoted_created_at", {}] 
+                    }, 
+                    "then": null, 
+                    "else": {
+                        "$dateToString": {"date": "$quoted_created_at"}
+                    }
+                }
+            },
+            "quoted_favorite_count": 1,
+            "quoted_retweet_count": 1,
+
+            "hashtags": 1
+        }
+    }
+]'
+)
+```
+
+```{r}
+original_tweet_headers <- c(
+  'status_id',
+  'verified',
+  'location',
+  'source',
+  'created_at',
+  'favorite_count',
+  'retweet_count',
+  'hashtags'
+)
+original_tweet_hashtags = expanded_hashtags[,original_tweet_headers]
+
+# Retweets
+retweeted_tweet_headers <- c(
+  'retweet_status_id',
+  'retweet_verified',
+  'retweet_location',
+  'retweet_source',
+  'retweet_created_at',
+  'retweet_favorite_count',
+  'retweet_retweet_count',
+  'hashtags'
+)
+
+retweeted_tweet_hashtags = expanded_hashtags[,retweeted_tweet_headers]
+
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_status_id'] <- 'status_id'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_verified'] <- 'verified'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_location'] <- 'location'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_source'] <- 'source'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_created_at'] <- 'created_at'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_favorite_count'] <- 'favorite_count'
+names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_retweet_count'] <- 'retweet_count'
+
+# Quotes
+quoted_tweet_headers <- c(
+  'quoted_status_id',
+  'quoted_verified',
+  'quoted_location',
+  'quoted_source',
+  'quoted_created_at',
+  'quoted_favorite_count',
+  'quoted_retweet_count',
+  'hashtags'
+)
+quoted_tweet_hashtags = expanded_hashtags[,quoted_tweet_headers]
+
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_status_id'] <- 'status_id'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_verified'] <- 'verified'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_location'] <- 'location'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_source'] <- 'source'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_created_at'] <- 'created_at'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_favorite_count'] <- 'favorite_count'
+names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_retweet_count'] <- 'retweet_count'
+```
+
+```{r}
+combined_hashtags = rbind(original_tweet_hashtags, retweeted_tweet_hashtags, quoted_tweet_hashtags)
+
+combined_hashtags['created_at_R_date'] = as.POSIXct(
+  combined_hashtags$created_at, 
+  format="%Y-%m-%dT", 
+  tz="UTC"
+)
+combined_hashtags['created_at'] = as.POSIXct(
+  combined_hashtags$created_at, 
+  format="%Y-%m-%dT%H:%M:%S", 
+  tz="UTC"
+)
+
+# Limpiamos duplicados
+combined_hashtags = combined_hashtags[!duplicated(combined_hashtags),]
+combined_hashtags[!is.na(combined_hashtags['created_at_R_date']),]
+```
+
+
+```{r}
+hashtags_counts_by_date = as.data.frame(
+  combined_hashtags %>%
+  group_by(created_at_R_date, hashtags) %>%
+  count(hashtags)
+)
+
+names(hashtags_counts_by_date)[1] = 'date'
+names(hashtags_counts_by_date)[3] = 'count'
+
+# Elimino todos los tweets sin hashtags (NA)
+hashtags_counts_by_date = hashtags_counts_by_date[!is.na(hashtags_counts_by_date['hashtags']),]
+
+```
+
+```{r}
+# Elimino ahora valores de hashtags que considero genéricos o de clasificación 
+# Estos hashtags no agregan valor al contenido
+filtered_hashtag_counts_by_date = as.data.frame(
+  hashtags_counts_by_date %>%
+  filter(
+    !str_detect(str_to_lower(hashtags), str_to_lower(".*COVID.*|.*coronavirus.*"))
+  )
+)
+
+# From summary
+hitos_min_date=as.POSIXct("2020-04-25")
+hitos_max_date=as.POSIXct("2020-05-15")
+
+filtered_hashtag_counts_by_date_range = as.data.frame(
+  filtered_hashtag_counts_by_date %>%
+    filter(date >= hitos_min_date & date <= hitos_max_date)
+)
+
+# Consigo el hashtag mas usado para un determinado día
+top_hashtags_by_news_date = as.data.frame(
+  filtered_hashtag_counts_by_date_range %>% 
+  group_by(date) %>% 
+  top_n(1, count)
+)
+
+# Me quedo con los que tienen valores significativos (> 3)
+top_hashtags_by_news_date = top_hashtags_by_news_date[top_hashtags_by_news_date["count"]>3,]
+```
+
+Graficamos los hashtags mas usados por día (evaluando contenido)
+```{r}
+
+p2 <- top_hashtags_by_news_date %>%
+  ggplot( aes(x=date, y=count, size=count, color=hashtags)) +
+  geom_point() +
+  ggtitle("Most used hashtag by date") +
+  xlab("date")  +
+  ylab("times used")  +
+  theme_bw()
+
+ggplotly(p2)
+```
+
+
+```{r}
+
+
+```
+

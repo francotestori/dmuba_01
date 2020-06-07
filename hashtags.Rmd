@@ -100,9 +100,8 @@ original_tweet_headers <- c(
   'hashtags'
 )
 original_tweet_hashtags = expanded_hashtags[,original_tweet_headers]
-```
 
-```{r}
+# Retweets
 retweeted_tweet_headers <- c(
   'retweet_user_id',
   'retweet_screen_name',
@@ -127,9 +126,8 @@ names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_crea
 names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_favorite_count'] <- 'favorite_count'
 names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_retweet_count'] <- 'retweet_count'
 names(retweeted_tweet_hashtags)[names(retweeted_tweet_hashtags) == 'retweet_statuses_count'] <- 'statuses_count'
-```
 
-```{r}
+# Quotes
 quoted_tweet_headers <- c(
   'quoted_user_id',
   'quoted_screen_name',
@@ -153,15 +151,34 @@ names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_created_at'
 names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_favorite_count'] <- 'favorite_count'
 names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_retweet_count'] <- 'retweet_count'
 names(quoted_tweet_hashtags)[names(quoted_tweet_hashtags) == 'quoted_statuses_count'] <- 'statuses_count'
+```
+
+```{r}
+
+```
+
+```{r}
 
 ```
 
 Combinamos y aplicamos transformaciones
 ```{r}
 combined_hashtags = rbind(original_tweet_hashtags, retweeted_tweet_hashtags, quoted_tweet_hashtags)
-combined_hashtags = combined_hashtags[!is.na(combined_hashtags["hashtags"]),]
-combined_hashtags['created_at_R_date'] = as.POSIXct(combined_hashtags$created_at, format="%Y-%m-%dT", tz="UTC")
-combined_hashtags['created_at'] = as.POSIXct(combined_hashtags$created_at, format="%Y-%m-%dT%H:%M:%S", tz="UTC")
+
+combined_hashtags['created_at_R_date'] = as.POSIXct(
+  combined_hashtags$created_at, 
+  format="%Y-%m-%dT", 
+  tz="UTC"
+)
+combined_hashtags['created_at'] = as.POSIXct(
+  combined_hashtags$created_at, 
+  format="%Y-%m-%dT%H:%M:%S", 
+  tz="UTC"
+)
+
+# Limpiamos duplicados
+combined_hashtags = combined_hashtags[!duplicated(combined_hashtags),]
+combined_hashtags[!is.na(combined_hashtags['created_at_R_date']),]
 ```
 
 Exploramos nuestros hashtags
