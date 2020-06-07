@@ -435,9 +435,13 @@ p2 <- top_hashtags_by_news_date %>%
 ggplotly(p2)
 ```
 
-
+Algunas fechas Y hashtags que parecen importantes
 ```{r}
+# 2020-05-02 Registro top de tweets (#QuedateEnCasa) ???
 
+# Hashtag CUBA fue TOP (2020-05-03, 2020-05-15) (Noticia medicos cubanos ???)
+
+# Hashtag Escandalo 2020-05-08 condice con Geriatrico Recoleta y picos de contagio
 
 ```
 
