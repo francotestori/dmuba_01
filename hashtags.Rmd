@@ -211,9 +211,14 @@ summary(hashtag_count)
 
 Filtramos hashtags por alguna regex
 ```{r}
-non_covid_hashtags = hashtag_count %>% filter(!str_detect(hashtags, regex('covid', ignore_case = T)))
+non_covid_hashtags = hashtag_count %>% 
+  filter(
+    !str_detect(str_to_lower(hashtags), str_to_lower(".*COVID.*|.*coronavirus.*|.*cuarentena*"))
+  )
 
-View(non_covid_hashtags)
+non_covid_hashtags = non_covid_hashtags[order(non_covid_hashtags$count, decreasing = TRUE),]
+top20_hashtags = non_covid_hashtags[1:20,]
+View(top20_hashtags)
 ```
 
 Hastags y numero de ocurrencias por usuarios
@@ -233,8 +238,36 @@ hashtags_by_screen_name = hashtags_by_screen_name[
   ),
 ]
 
-View(hashtags_by_screen_name)
+hashtags_by_screen_name = hashtags_by_screen_name[!is.na(hashtags_by_screen_name$hashtags),]
+
+View(hashtags_by_screen_name[1:20,])
 ```
+
+Hastags non-covid y numero de ocurrencias por usuarios
+```{r}
+hashtags_with_screen_name_nc = combined_hashtags[!is.na(combined_hashtags["screen_name"]),]
+
+hashtags_with_screen_name_nc = hashtags_with_screen_name_nc %>%
+  filter(
+    !str_detect(str_to_lower(hashtags), str_to_lower(".*COVID.*|.*coronavirus.*|.*cuarentena*"))
+  ) %>%
+  group_by(screen_name, hashtags) %>%
+  tally()
+
+names(hashtags_with_screen_name_nc)[names(hashtags_with_screen_name_nc) == "n"] = "count"
+
+hashtags_with_screen_name_nc = hashtags_with_screen_name_nc[
+  order(
+    hashtags_with_screen_name_nc["count"], 
+    decreasing = TRUE
+  ),
+]
+
+hashtags_with_screen_name_nc = hashtags_with_screen_name_nc[!is.na(hashtags_with_screen_name_nc$hashtags),]
+
+View(hashtags_with_screen_name_nc[1:20,])
+```
+
 
 Hastags y numero de ocurrencias por usuarios verificados
 ```{r}
@@ -254,6 +287,8 @@ hashtags_by_verified = hashtags_by_verified[
     decreasing = TRUE
   ),
 ]
+
+hashtags_by_verified = hashtags_by_verified[!is.na(hashtags_by_verified$hashtags),]
 
 View(hashtags_by_verified)
 ```

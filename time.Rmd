@@ -220,14 +220,42 @@ tweet_counts_by_date_range = as.data.frame(
 summary(tweet_counts_by_date_range)
 ```
 
-Graficamos la cantidad de tweets por día
+
+```{r}
+date_2020=as.POSIXct("2020-04-01")
+
+tweet_counts_2020= as.data.frame(
+  tweet_counts_by_date %>%
+    filter(date >= date_2020)
+)
+```
+
+Graficamos la cantidad de tweets por día para nuestro base
+```{r}
+# Usual area chart
+p <- tweet_counts_2020 %>%
+  ggplot( aes(x=date, y=count)) +
+    geom_area(fill="#69b3a2", alpha=0.5) +
+    geom_line(color="#69b3a2") +
+    ylab("tweet count") +
+    ggtitle("Tweets desde Abril 2020") +
+    theme_ipsum()
+
+# Turn it interactive with ggplotly
+p <- ggplotly(p)
+p
+```
+
+
+Graficamos la cantidad de tweets por día para nuestro rango de noticias
 ```{r}
 # Usual area chart
 p <- tweet_counts_by_date_range %>%
   ggplot( aes(x=date, y=count)) +
     geom_area(fill="#69b3a2", alpha=0.5) +
     geom_line(color="#69b3a2") +
-    ylab("tweets by news events dates") +
+    ylab("tweet count") +
+    ggtitle("Tweets by news time range") +
     theme_ipsum()
 
 # Turn it interactive with ggplotly
@@ -397,7 +425,7 @@ hashtags_counts_by_date = hashtags_counts_by_date[!is.na(hashtags_counts_by_date
 filtered_hashtag_counts_by_date = as.data.frame(
   hashtags_counts_by_date %>%
   filter(
-    !str_detect(str_to_lower(hashtags), str_to_lower(".*COVID.*|.*coronavirus.*"))
+    !str_detect(str_to_lower(hashtags), str_to_lower(".*COVID.*|.*coronavirus.*|.*cuarentena*"))
   )
 )
 
@@ -414,7 +442,7 @@ filtered_hashtag_counts_by_date_range = as.data.frame(
 top_hashtags_by_news_date = as.data.frame(
   filtered_hashtag_counts_by_date_range %>% 
   group_by(date) %>% 
-  top_n(1, count)
+  top_n(3, count)
 )
 
 # Me quedo con los que tienen valores significativos (> 3)
@@ -427,11 +455,12 @@ Graficamos los hashtags mas usados por día (evaluando contenido)
 p2 <- top_hashtags_by_news_date %>%
   ggplot( aes(x=date, y=count, size=count, color=hashtags)) +
   geom_point() +
-  ggtitle("Most used hashtag by date") +
+  ggtitle("Hashtag mas utilizado por fecha (top 2)") +
   xlab("date")  +
-  ylab("times used")  +
+  ylab("hashtag count")  +
   theme_bw()
 
+p2
 ggplotly(p2)
 ```
 
